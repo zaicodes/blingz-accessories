@@ -4,7 +4,7 @@
 
 ![Am-I-responsive]()
 
-[Live link to website]()
+[Live link to website](https://zaicodes.github.io/blingz-accessories/)
 
 ## Project Goals
 
