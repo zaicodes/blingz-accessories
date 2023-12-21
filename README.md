@@ -24,6 +24,10 @@ Psychographics:
 
 ### Client Goals
 
+- First time visitor goals:
+- Returning visitors goals:
+- Frequent visitor goals:
+
 ## Design
 
 ### Wireframes
@@ -39,8 +43,6 @@ Psychographics:
 ### Style
 
 ### Icons
-
-### Sound effects and music
 
 ## Features
 
@@ -62,7 +64,8 @@ Psychographics:
 
 - HTML5 - to create the structure of the site.
 - CSS3 - to add styling to the site.
-- JavaScript - to add functionality to the game.
+- JavaScript - to add functionality to .
+- Python -
 
 ### Libraries and frameworks
 
@@ -75,12 +78,17 @@ Psychographics:
 - Balsamiq - to design the wireframes of the project.
 - Fontawesome.com - to get icons for the website
 - Favicon.io - to generate tab icons for the website
-- Freepik.com - to get the images from.
 - cloudconvert - to convert images from png or jpg to webp.
+
+### Databases and API
+
+The project has database and APIs used:
+
+- MongoDB
 
 ## Testing
 
-To view testing click [here]()
+To view testing click [here](https://github.com/zaicodes/blingz-accessories/blob/main/TESTING.md)
 
 ## Deployment & Local Development
 
@@ -122,11 +130,6 @@ The images used in this project are from the following links:
 
 - []()
 
-Music and sound:
-
-- []()
-- []()
-
 ### Acknowledgements
 
 I wish to express profound gratitude to those who offered their invaluable assistance and unwavering support throughout the completion of my second milestone project:
@@ -134,5 +137,3 @@ I wish to express profound gratitude to those who offered their invaluable assis
 - Narender S. - my mentor, for checking my progress and providing helpful feedback.
 
 - Jessica I. – for the weekly stand-ups which were very helpful and informative.
-
-- Asim S. (Preply) – an online tutor, who helped me learn how to code and develop this skill (highly recommend him).
