@@ -1,0 +1,45 @@
+.section-1-about {
+  background-image: url("../images/contactmain.webp");
+  background-position: center;
+  background-size: 100%;
+  width: 100%;
+  padding: 150px 0px;
+  background-repeat: no-repeat;
+}
+.section-1-about h1 {
+  color: white;
+}
+.section-2-about {
+  background-color: rgb(255, 243, 237);
+  padding: 150px 0px;
+}
+
+.main-section-2-about {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+.perfectmatch-main {
+  max-width: 600px;
+}
+.perfectmatch-main .heading,
+.perfectmatch-main .para {
+  text-align: left;
+}
+.details-columns-main {
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.details-columns-main .heading,
+.details-columns-main .para {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+.details-columns-main .para {
+  color: #fca068;
+}
+.main-section-2-about img {
+  width: 100%;
+}
