@@ -3,13 +3,7 @@
 [Visit Live Site Here!]()
 [Main READ ME FILE Here]()
 
-Continuous testing was an integral part of the entire development process. I relied on Chrome developer tools to identify and resolve issues as they arose during the development phase.
-
-Throughout the development, Google developer tools were instrumental in verifying the proper functioning of various elements and troubleshooting any unexpected behavior.
-
-I also leveraged the developer tools' console to carefully assess specific sections of JavaScript, ensuring that the code performed as intended and to troubleshoot any encountered issues.
-
-To guarantee responsiveness across a variety of screen sizes and devices, I meticulously examined each page using both Google Chrome developer tools and the Firefox inspector tool.
+I continuously tested and debugged my project using Chrome developer tools, ensuring proper functionality and responsiveness across various devices. I also utilized Google developer tools to verify different elements and troubleshoot any issues, specifically assessing JavaScript code sections for intended performance.
 
 ## Manual Testing
 
@@ -23,7 +17,7 @@ To guarantee responsiveness across a variety of screen sizes and devices, I meti
 
 ### testing using other screen size devices and browsers
 
-Comprehensive testing was conducted on the following devices:
+Thorough testing was performed on the following devices:
 
 Laptop:
 
@@ -34,15 +28,15 @@ Mobile Devices:
 - iPhone 13 Pro
 - Samsung Galaxy S23 Ultra
 
-Furthermore, the website underwent testing using the following browsers:
+In addition, the website was tested on the following browsers:
 
 - Google Chrome
 - Safari
 - Firefox
 
-No issues were reported when playing the game.
+No problems were identified.
 
-### Full testing of game page
+### Full testing
 
 ## Automated Testing
 
