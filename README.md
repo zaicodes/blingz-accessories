@@ -1,6 +1,6 @@
 # Blingz-accessories - Milestone Project 3
 
-![Logo]()
+![Favicon](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/android-chrome-192x192.png)
 
 ![Am-I-responsive]()
 
