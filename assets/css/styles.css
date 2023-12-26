@@ -54,6 +54,10 @@ a {
 }
 .cart i {
   color: black;
+  cursor: pointer;
+}
+.user-logo {
+  cursor: pointer;
 }
 span {
   background-color: rgb(252, 160, 104);
@@ -93,6 +97,66 @@ span {
   align-items: center;
 }
 
+/* loginform  */
+.close-login {
+  position: relative;
+  left: 100%;
+  top: -20px;
+  cursor: pointer;
+}
+.login {
+  display: none;
+}
+.wrapper {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  background-attachment: fixed;
+  background-color: rgba(8, 8, 8, 0.3);
+}
+.login-form-home {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  max-width: 800px;
+  padding: 80px 100px;
+  border-radius: 15px;
+}
+.login-form-home form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.login-form-home input {
+  width: 100%;
+  border: none;
+  font-size: 18px;
+  padding: 15px 10px;
+  background-color: rgb(255, 243, 237);
+}
+.login-form-home input::placeholder {
+  color: #212121;
+  margin: 10px 0px;
+  font-family: Jost, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+.login-form-home button {
+  margin: 20px 0px;
+  border: none;
+  cursor: pointer;
+}
+.login-form-home a {
+  text-decoration: underline;
+  color: #fca068;
+}
 /* section1  */
 .section-1-home {
   background-color: #fca068;
@@ -206,8 +270,16 @@ footer {
 }
 footer a {
   color: #212121;
+  line-height: 2.3;
+  font-weight: 400;
   font-size: 18px;
-  line-height: 1.8;
+  font-family: Jost, sans-serif;
+}
+footer a:hover {
+  color: #fca068;
+}
+footer i {
+  margin-right: 10px;
 }
 .footer-heading {
   text-align: left;
