@@ -7,10 +7,10 @@
   background-repeat: no-repeat;
 }
 .section-1-about h1 {
-  color: white;
+  color: #ffe4e4;
 }
 .section-2-about {
-  background-color: rgb(255, 243, 237);
+  background-color: #ffe4e4;
   padding: 150px 0px;
 }
 
@@ -38,7 +38,7 @@
   line-height: 1.2;
 }
 .details-columns-main .para {
-  color: #fca068;
+  color: #fc6868;
 }
 .main-section-2-about img {
   width: 100%;

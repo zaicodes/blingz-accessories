@@ -10,7 +10,7 @@
   color: rgb(0, 0, 0);
 }
 .section-2-signup {
-  background-color: rgb(255, 243, 237);
+  background-color: #ffe4e4;
   padding: 150px 0px;
 }
 .signup-main {
@@ -38,7 +38,7 @@
   border: 1px solid black;
 }
 .section-1-signup input::placeholder {
-  color: #212121;
+  color: #3b3b3b;
   margin: 10px 0px;
   font-family: Jost, sans-serif;
   font-weight: 400;

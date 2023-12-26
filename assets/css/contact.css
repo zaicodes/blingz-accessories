@@ -10,7 +10,7 @@
 .main-section-2-contact .contacts-cols {
   padding: 50px 0 30px;
   text-align: center;
-  background-color: #ffe6ce;
+  background-color: #ffe4e4;
 }
 .contacts-cols .heading {
   font-size: 4rem;
@@ -27,7 +27,7 @@
   border: none;
   font-size: 18px;
   padding: 15px 10px;
-  background-color: #ffe6ce;
+  background-color: #ffe4e4;
 }
 .login-form input::placeholder {
   color: #212121;
@@ -48,7 +48,7 @@
 }
 .login-form textarea {
   border: none;
-  background-color: #ffe6ce;
+  background-color: #ffe4e4;
 }
 .form-image img {
   width: 100%;
