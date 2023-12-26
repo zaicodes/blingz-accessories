@@ -19,6 +19,9 @@ nav {
   padding-left: 20px;
   padding-right: 20px;
 }
+.user-logo {
+  margin-right: 20px;
+}
 
 .navbar {
   display: flex;
@@ -27,6 +30,7 @@ nav {
 }
 nav img {
   width: 150px;
+  height: 100px;
 }
 .nav-links a {
   text-transform: uppercase;
@@ -88,6 +92,7 @@ span {
   display: flex;
   align-items: center;
 }
+
 /* section1  */
 .section-1-home {
   background-color: #fca068;
@@ -95,11 +100,11 @@ span {
 }
 .section-1-home {
   position: relative;
-  z-index: -3;
 }
 ul {
   list-style: none;
 }
+
 .section-1-home h2 {
   font-family: Prata, sans-serif;
   font-size: 7rem;
@@ -116,6 +121,7 @@ ul {
 .header-btn:hover {
   color: white;
 }
+
 .sec-1-left-pic {
   width: 400px;
   height: 300px;

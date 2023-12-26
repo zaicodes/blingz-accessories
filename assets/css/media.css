@@ -7,20 +7,22 @@
   }
   .nav-links {
     display: flex;
-    z-index: -1;
     flex-direction: column;
+    position: fixed;
     padding: 80px 0px 50px;
     gap: 50px;
-    top: -100%;
+    top: 100px;
     width: 100%;
-    position: absolute;
-    left: 0;
+    left: -100%;
     background-color: antiquewhite;
     transition: 0.5s;
+    /* opacity: 0;s */
+    z-index: 5;
   }
   .navshow {
     transition: 0.5s;
-    top: 120px;
+    left: 0;
+    /* opacity: 1; */
   }
   .main-section-2-contact {
     grid-template-columns: 1fr 1fr !important;
@@ -41,6 +43,12 @@
   .main-section-2-about {
     flex-direction: column;
   }
+  .main-section-3-contact {
+    flex-direction: column;
+  }
+  .section-2-shop .main-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
 }
 @media (max-width: 767px) {
   html {
@@ -58,6 +66,12 @@
     gap: 50px;
   }
   .main-section-2-contact {
+    grid-template-columns: 1fr !important;
+  }
+  .name-inputs {
+    flex-direction: column;
+  }
+  .section-2-shop .main-grid {
     grid-template-columns: 1fr !important;
   }
 }
