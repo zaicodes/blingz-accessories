@@ -55,6 +55,9 @@ As a frequent user, I want to:
 
 ### Wireframes
 
+During the planning stage, I used Balsamiq for crafting the wireframes.
+Click [here](https://github.com/zaicodes/blingz-accessories/tree/main/documentation/wireframes) to access them.
+
 ### Colour Scheme
 
 ![Colour Palette](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/colour-palette.png)
@@ -67,7 +70,9 @@ The project utilizes the following Google Fonts: with
 - Prata
   The Jost font is applied to buttons, the navbar, and price and p tags, while Prata is used exclusively for all headings and titles.
 
-### Images and Background
+### Images
+
+I used Midjourney to create pictures of models wearing jewelry and to generate photos of jewelry products for the shop page.
 
 ## Features
 
