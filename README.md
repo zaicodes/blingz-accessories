@@ -2,7 +2,7 @@
 
 ![Favicon](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/android-chrome-192x192.png)
 
-![Am-I-responsive]()
+![Am-I-responsive](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/am-i-responsive.png)
 
 [Live link to website](https://zaicodes.github.io/blingz-accessories/)
 
@@ -57,7 +57,7 @@ As a frequent user, I want to:
 
 ### Colour Scheme
 
-![Colour Palette]()
+![Colour Palette](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/colour-palette.png)
 
 ### Typography
 
