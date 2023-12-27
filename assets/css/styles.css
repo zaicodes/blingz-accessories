@@ -211,7 +211,7 @@ ul {
   font-size: 3.6rem;
   line-height: 1.8;
   text-align: center;
-  color: #3b3b3b;
+  color: #fc6868;
 }
 .small-heading {
   font-family: Prata, sans-serif;
@@ -287,6 +287,7 @@ footer i {
 }
 .footer-heading {
   text-align: left;
+  color: #fc6868;
 }
 footer h2 {
   text-align: left;
