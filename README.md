@@ -113,12 +113,6 @@ Contact page:
 - Multiple ways for contacting customer support, including a contact form for written queries.
 - Key contact information, such as phone numbers and email addresses, for more urgent enquiries.
 
-![favicon]()
-
-![home]()
-
-![header]()
-
 ### Features left to implement
 
 ## Accessibility
@@ -143,12 +137,15 @@ Contact page:
 - Gihub - to store the project's code after being pushed from Git.
 - Visual Studio Code - to code my project
 - Lighthouse - to test the accessibility of the website
-- Am I responsive? To present the website image on a different devices.
+- Am I responsive? - To present the website image on a different devices.
 - Google Dev Tools - to test features, and responsiveness and to troubleshoot.
 - Balsamiq - to design the wireframes of the project.
 - Fontawesome.com - to get icons for the website
 - Favicon.io - to generate tab icons for the website
 - cloudconvert - to convert images from png or jpg to webp.
+- img2go.com - to resize images to any size.
+- Coolors - to generate colour palette for the website
+- Google fonts - to get typography with free, customizable fonts.
 
 ### Databases and API
 
@@ -219,14 +216,12 @@ To clone the repository:
 ### Content
 
 - The website's textual content has been written by me.
+- The design is inspired by [Jewelly](https://jewelly.webflow.io/).
 
 ### Media
 
-Images:
-
-The images used in this project are from the following links:
-
-- []()
+- Midjourney was used to generate images used in the website.
+- The icons are from Font Awesome.
 
 ### Acknowledgements
 
