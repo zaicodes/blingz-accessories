@@ -21,3 +21,28 @@ closelogin.addEventListener("click", () => {
 signinbtn.addEventListener("click", () => {
   toggleloginform();
 });
+
+// contact form
+function Sendmail() {
+  console.log("asdfskdlafbnsdkl");
+  var params = {
+    from_name: document.getElementById("fullname").value,
+    email_id: document.getElementById("email_id").value,
+    message: document.getElementById("message").value,
+  };
+
+  const value = document.getElementById("email_id").value;
+  if (value.indexOf("@") === -1) {
+    alert("plesae enter the email");
+    return;
+  } else {
+    emailjs
+      .send("service_vtkbahe", "template_47nej3m", params)
+      .then(function (res) {
+        alert("Success ! " + res.status);
+      });
+    document.getElementById("fullname").value = "";
+    document.getElementById("email_id").value = "";
+    document.getElementById("message").value = "";
+  }
+}

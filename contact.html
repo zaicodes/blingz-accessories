@@ -19,6 +19,16 @@
       href="./assets/images/android-chrome-192x192.png"
       type="image/x-icon"
     />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init("YHTCkok7fd_7kaLK-");
+      })();
+    </script>
     <title>Blingz</title>
   </head>
   <body>
@@ -42,7 +52,6 @@
             </div>
             <a href="./shop.html" class="main-btn">shop now</a>
           </div>
-
           <div class="menu"><i class="fa-solid fa-2x fa-bars"></i></div>
         </div>
       </nav>
@@ -87,15 +96,36 @@
               Jewellery comes in a wide variety of styles, from simple and
               minimalist to elaborate and ornate.
             </p>
+
             <div class="main-inputs">
               <div class="name-inputs">
-                <input type="text" placeholder="Full Name" />
-                <input type="text" placeholder="Your Email" />
+                <input
+                  label="name"
+                  id="fullname"
+                  type="text"
+                  placeholder="Full Name"
+                />
+                <input
+                  label="email"
+                  id="email_id"
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                />
               </div>
               <div>
-                <input type="text" placeholder="Your Number" />
+                <input label="title" type="text" placeholder="Enter a title" />
               </div>
-              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <textarea
+                label="message"
+                placeholder="Type your message here"
+                required
+                name=""
+                id="message"
+                cols="30"
+                rows="10"
+              ></textarea>
+              <button class="main-btn" onclick="Sendmail()">submit</button>
             </div>
           </div>
         </div>
