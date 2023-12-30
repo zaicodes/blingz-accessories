@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<!-- login form  -->
+<div class="login">
+  <div class="login-form-home">
+    <i class="fa-solid fa-3x fa-xmark close-login"></i>
+    <h1 class="small-heading">Login Form</h1>
+    <form>
+      <input type="email" placeholder="Enter you email" />
+      <br />
+      <input type="password" placeholder="Enter your password" />
+      <button type="submit" class="main-btn">Submit</button>
+      <p class="para">Don't have an account? <a href="">Sign up</a></p>
+    </form>
+  </div>
+</div>
+<section class="section-1-signup">
+  <div class="container signup-main">
+    <h1 class="heading">Sign up</h1>
+    <form>
+      <input type="text" placeholder="Enter your first name" />
+      <input type="text" placeholder="Enter your last name" />
+      <input type="email" placeholder="Enter your email" />
+      <input type="password" placeholder="Enter your password" />
+      <input type="password" placeholder="onfirm your password" />
+      <button type="submit" class="main-btn">Submit</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

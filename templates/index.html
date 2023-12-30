@@ -1,0 +1,87 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- login form  -->
+<div class="login">
+  <div class="login-form-home">
+    <i class="fa-solid fa-3x fa-xmark close-login"></i>
+    <h1 class="small-heading">Login</h1>
+    <form>
+      <input type="email" placeholder="Enter you email" />
+      <br />
+      <input type="password" placeholder="Enter your password" />
+      <button class="main-btn">Submit</button>
+      <p class="para">
+        Don't have an account?
+        <a class="signin-btn" href="./signup.html">Sign in</a>
+      </p>
+    </form>
+  </div>
+</div>
+<section class="section section-1-home">
+  <div class="container">
+    <div class="sec1-home-flex">
+      <div>
+        <h2>Radiance That Reflects Your Inner Elegance!</h2>
+        <a href="#" class="main-btn header-btn">See More</a>
+        <br />
+        <img
+          class="sec-1-left-pic"
+          src="{{ url_for('static', filename='images/header-pic-1.webp') }}"
+          alt=""
+        />
+      </div>
+      <div class="sec-1-right-girl"></div>
+    </div>
+  </div>
+</section>
+<section class="section section2-home">
+  <div class="container">
+    <h1 class="heading">
+      Each piece of our jewellery is uniquely made in our Turkish workshop,
+      incorporating Fairmined Gold to ensure ethical and sustainable practices.
+    </h1>
+  </div>
+</section>
+
+<section class="section section4-home">
+  <div class="container">
+    <h2 class="heading">Browse by Category</h2>
+    <div class="heading secondary-heading">
+      Distinctive Golden Necklaces , luxurious Rings , Splendid Earrings
+    </div>
+  </div>
+</section>
+<section class="section section5-home">
+  <div class="container">
+    <h2 class="heading">
+      What Makes Our Wide Range of Jewelry Options Worth Your Selection?
+    </h2>
+    <div class="main-div-jewelery-section">
+      <div class="gift-col flex-wrap">
+        <img src="./assets/images/gifts.svg" alt="" />
+        <h2 class="small-heading">Gift Package</h2>
+        <p class="para">
+          We delicately wrap each piece in elegant packaging, ensuring a
+          beautifully presented and thoughtful gift for any special occasion.
+        </p>
+      </div>
+      <div class="diamond-col flex-wrap">
+        <img src="./assets/images/damond.svg" alt="" />
+        <h2 class="small-heading">Diamond and Golden Glow</h2>
+        <p class="para">
+          Our collection Range consists of Golden Excellence, Infused with
+          Diamond Radiance, Your Exclusive Statement of Style.
+        </p>
+      </div>
+      <div class="ring-col flex-wrap">
+        <img src="./assets/images/rings.svg" alt="" />
+        <h2 class="small-heading">Lasting Brilliance</h2>
+        <p class="para">
+          Fine craftsmanship and enduring quality unite to offer pieces that
+          boast timeless beauty and sustained brilliance for years to come.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
