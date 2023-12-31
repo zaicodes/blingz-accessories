@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Required meta and link tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -37,20 +38,22 @@
     />
     <link
       rel="shortcut icon"
-      href="./assets/images/android-chrome-192x192.png"
+      href="{{ url_for('static', filename='images/android-chrome-192x192.png')}}"
       type="image/x-icon"
     />
+    <!-- Title  -->
     <title>Blingz</title>
   </head>
   <body>
     <header>
+      <!-- Navbar for all pages -->
       <nav>
         <div class="container navbar">
           <div>
             <a href="/">
               <img
                 src="{{ url_for('static', filename='images/Website logo.png')}}"
-                alt="navlogo"
+                alt="nav-logo"
             /></a>
           </div>
           <div class="nav-links">
@@ -71,48 +74,51 @@
       </nav>
     </header>
     {% block content %} {% endblock %}
-
     <footer>
+      <!-- Footer -->
       <div class="container">
         <div class="footer-main">
           <div class="footer-col-1">
-            <img src="assets/images/Website logo.png" alt="" srcset="" />
+            <a href="/">
+              <img
+                src="{{ url_for('static', filename='images/Website logo.png')}}"
+                alt="footer-logo"
+            /></a>
             <p class="para">
               It is crafted to be worn as an adornment or ornament, frequently
               imbued with cultural or symbolic significance.
             </p>
           </div>
           <div class="footer-col-2">
-            <h2 class="small-heading footer-heading">Pages</h2>
+            <h2 class="small-heading footer-heading">Visit</h2>
             <ul>
-              <li><a href="">Home</a></li>
-              <li><a href=""> About Us </a></li>
-              <li><a href="">Blog</a></li>
-              <li><a href="">Contact</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="./about">About</a></li>
+              <li><a href="./shop">Shop</a></li>
+              <li><a href="./contact">Contact</a></li>
             </ul>
           </div>
           <div class="footer-col-3">
             <h2 class="small-heading footer-heading">Categories</h2>
             <ul>
               <li><a href="">Necklaces</a></li>
-              <li><a href=""> Bracelets </a></li>
               <li><a href="">Earrings</a></li>
               <li><a href="">Rings</a></li>
             </ul>
           </div>
           <div class="footer-col-3">
-            <h2 class="small-heading footer-heading">You Need Help</h2>
+            <h2 class="small-heading footer-heading">Need help?</h2>
             <ul>
               <li>
                 <a href=""
                   ><i class="fa-solid fa-id-card" style="color: #fc6868"></i>
-                  +1800-001-658</a
+                  07123456789</a
                 >
               </li>
               <li>
                 <a href="">
                   <i class="fa-solid fa-envelope" style="color: #fc6868"></i
-                  >peacefulqode@gmail.com</a
+                  >blingz@emailexample.com</a
                 >
               </li>
               <li>
@@ -121,7 +127,7 @@
                     class="fa-solid fa-location-dot"
                     style="color: #fc6868"
                   ></i>
-                  webflow, shop no.24 Fifth st., USA</a
+                  98 Ploughley Rd, London, NW9 001</a
                 >
               </li>
             </ul>
@@ -130,5 +136,6 @@
       </div>
     </footer>
   </body>
+  <!-- Javascript  -->
   <script src="{{ url_for('static', filename='scripts/script.js')}}"></script>
 </html>

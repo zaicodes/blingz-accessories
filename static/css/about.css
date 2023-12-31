@@ -1,3 +1,7 @@
+/* About page */
+
+/*Section 1*/
+
 .section-1-about {
   background-image: url("../images/contactmain.webp");
   background-position: center;
@@ -42,4 +46,9 @@
 }
 .main-section-2-about img {
   width: 100%;
+}
+
+.section-3-about {
+  padding: 100px 0px;
+  background-color: #ffe4e4;
 }

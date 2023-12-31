@@ -8,21 +8,29 @@
       <input type="email" placeholder="Enter you email" />
       <br />
       <input type="password" placeholder="Enter your password" />
-      <button type="submit" class="main-btn">Submit</button>
+      <button type="submit" class="main-btn">Log in</button>
       <p class="para">Don't have an account? <a href="">Sign up</a></p>
     </form>
   </div>
 </div>
+<!-- Signup form section -->
 <section class="section-1-signup">
   <div class="container signup-main">
     <h1 class="heading">Sign up</h1>
     <form>
-      <input type="text" placeholder="Enter your first name" />
-      <input type="text" placeholder="Enter your last name" />
-      <input type="email" placeholder="Enter your email" />
-      <input type="password" placeholder="Enter your password" />
-      <input type="password" placeholder="onfirm your password" />
-      <button type="submit" class="main-btn">Submit</button>
+      <label for="firstname" class="signup-label">First name:</label>
+      <input type="text" id="firstname" name="firstname" />
+      <label for="lastname" class="signup-label">Last name:</label>
+      <input type="text" id="lastname" name="lastname" />
+      <label for="email" class="signup-label">Email:</label>
+      <input type="email" id="email" name="email" />
+      <label for="password" class="signup-label">Password:</label>
+      <input type="password" id="password" name="password" />
+      <label for="confirm_password" class="signup-label"
+        >Confirm password:</label
+      >
+      <input type="password" id="confirm_password" name="confirm_password" />
+      <button type="submit" value="submit" class="main-btn">Submit</button>
     </form>
   </div>
 </section>

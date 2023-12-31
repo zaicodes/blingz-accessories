@@ -1,5 +1,4 @@
 {% extends "base.html" %} {% block content %}
-
 <!-- login form  -->
 <div class="login">
   <div class="login-form-home">
@@ -9,14 +8,16 @@
       <input type="email" placeholder="Enter you email" />
       <br />
       <input type="password" placeholder="Enter your password" />
-      <button class="main-btn">Submit</button>
+      <button class="main-btn">Log in</button>
       <p class="para">
         Don't have an account?
-        <a class="signin-btn" href="./signup.html">Sign in</a>
+        <a class="signin-btn" href="./signup">Sign in</a>
       </p>
     </form>
   </div>
 </div>
+
+<!-- Section 1 / Hero Section -->
 <section class="section section-1-home">
   <div class="container">
     <div class="sec1-home-flex">
@@ -34,6 +35,8 @@
     </div>
   </div>
 </section>
+
+<!-- Section 2 / information 1-->
 <section class="section section2-home">
   <div class="container">
     <h1 class="heading">
@@ -43,6 +46,7 @@
   </div>
 </section>
 
+<!-- Section 3 / Gategory -->
 <section class="section section4-home">
   <div class="container">
     <h2 class="heading">Browse by Category</h2>
@@ -51,6 +55,8 @@
     </div>
   </div>
 </section>
+
+<!-- Section 1 / Information 2 -->
 <section class="section section5-home">
   <div class="container">
     <h2 class="heading">
@@ -58,7 +64,7 @@
     </h2>
     <div class="main-div-jewelery-section">
       <div class="gift-col flex-wrap">
-        <img src="./assets/images/gifts.svg" alt="" />
+        <img src="{{ url_for('static', filename='images/gifts.svg')}}" alt="" />
         <h2 class="small-heading">Gift Package</h2>
         <p class="para">
           We delicately wrap each piece in elegant packaging, ensuring a
@@ -66,7 +72,10 @@
         </p>
       </div>
       <div class="diamond-col flex-wrap">
-        <img src="./assets/images/damond.svg" alt="" />
+        <img
+          src="{{ url_for('static', filename='images/damond.svg')}}"
+          alt=""
+        />
         <h2 class="small-heading">Diamond and Golden Glow</h2>
         <p class="para">
           Our collection Range consists of Golden Excellence, Infused with
@@ -74,7 +83,7 @@
         </p>
       </div>
       <div class="ring-col flex-wrap">
-        <img src="./assets/images/rings.svg" alt="" />
+        <img src="{{ url_for('static', filename='images/rings.svg')}}" alt="" />
         <h2 class="small-heading">Lasting Brilliance</h2>
         <p class="para">
           Fine craftsmanship and enduring quality unite to offer pieces that

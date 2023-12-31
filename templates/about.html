@@ -1,9 +1,12 @@
 {% extends "base.html" %} {% block content %}
 <section class="section-1-about">
+  <!-- Section 1 / Page header  -->
   <div class="container">
     <h1 class="heading">About Us</h1>
   </div>
 </section>
+
+<!-- Section 2 / About us  -->
 <section class="section-2-about">
   <div class="container">
     <div class="main-section-2-about">
@@ -41,12 +44,17 @@
     </div>
   </div>
 </section>
-<section class="section section5-home">
+
+<!-- Section 3 / Support Details  -->
+<section class="section section-3-about">
   <div class="container">
     <h2 class="heading">What Makes Blingz Accessories Special?</h2>
     <div class="main-div-jewelery-section">
       <div class="delivery-col flex-wrap">
-        <img src="./assets/images/delivery.svg" alt="" />
+        <img
+          src="{{ url_for('static', filename='images/delivery.svg')}}"
+          alt=""
+        />
         <h2 class="small-heading">Worldwide Delivery</h2>
         <p class="para">
           Enjoy the convenience of worldwide delivery, bringing our exceptional
@@ -54,7 +62,10 @@
         </p>
       </div>
       <div class="support-col flex-wrap">
-        <img src="./assets/images/support.svg" alt="" />
+        <img
+          src="{{ url_for('static', filename='images/support.svg')}}"
+          alt=""
+        />
         <h2 class="small-heading">Fast Support</h2>
         <p class="para">
           We're here to help you quickly! Contact us easily through email,
@@ -62,7 +73,10 @@
         </p>
       </div>
       <div class="protection-col flex-wrap">
-        <img src="./assets/images/protection.svg" alt="" />
+        <img
+          src="{{ url_for('static', filename='images/protection.svg')}}"
+          alt=""
+        />
         <h2 class="small-heading">Buyer Protection</h2>
         <p class="para">
           Our comprehensive buyer protection ensures that your purchase is
