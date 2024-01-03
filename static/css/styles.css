@@ -253,12 +253,22 @@ ul {
   background-color: #ffe4e4;
 }
 
-/* Section 4  */
+/* Section 3  */
 
-.section4-home {
-  background-color: white;
+.section3-home {
+  background-image: url("../images/model-image.png");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.654);
+  background-blend-mode: color-burn;
+  width: 100%;
   padding: 100px 0px;
-  margin-top: 10px;
+}
+
+.section3-home .secondary-heading {
+  color: white;
 }
 
 /* Section 5   */
