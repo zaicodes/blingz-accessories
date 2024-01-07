@@ -1,8 +1,9 @@
 .section-1-shop {
   background-image: url("../images/contactmain.webp");
-  background-position: center;
+  background-position: top;
   background-size: 100%;
   width: 100%;
+  background-size: cover;
   padding: 150px 0px;
   background-repeat: no-repeat;
 }
@@ -15,8 +16,17 @@
 .section-2-shop .main-grid {
   margin: 50px 0px;
   display: grid;
-  gap: 40px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 140px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.description_para {
+  color: #3b3b3b;
+  margin: 10px 0px;
+  font-family: Jost, sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
 }
 .item img {
   width: 100%;
@@ -24,4 +34,16 @@
 .item .para {
   text-align: center;
   color: #fc6868;
+}
+
+.rating {
+  width: 125px !important;
+}
+
+.item {
+  text-align: center;
+}
+
+.item .small-heading {
+  font-size: 24px;
 }

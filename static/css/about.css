@@ -4,9 +4,10 @@
 
 .section-1-about {
   background-image: url("../images/contactmain.webp");
-  background-position: center;
+  background-position: top;
   background-size: 100%;
   width: 100%;
+  background-size: cover;
   padding: 150px 0px;
   background-repeat: no-repeat;
 }

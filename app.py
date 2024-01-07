@@ -4,11 +4,6 @@ import json
 
 app = Flask(__name__)
 
-# Load Products data from the json file
-json_file_path = os.path.join("data", 'products.json')
-with open(json_file_path, 'r') as file:
-    products_data = json.load(file)
-
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -26,7 +21,10 @@ def contact():
 
 @app.route("/shop")
 def shop():
-    return render_template("shop.html")
+    data=[]
+    with open("data/products.json","r") as json_data:
+     data = json.load(json_data)
+    return render_template("shop.html",company=data)
 
 
 @app.route("/signup")
