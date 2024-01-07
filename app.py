@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 
 # Load Products data from the json file
-json_file_path = os.path.join(data_folder, 'products.json')
+json_file_path = os.path.join("data", 'products.json')
 with open(json_file_path, 'r') as file:
     products_data = json.load(file)
 
