@@ -13,6 +13,10 @@
     <div class="main-grid">
       {% for member in company %}
       <div class="item">
+        <span>
+          <i class="{{ member.wishlist }} wishlist-btn"></i>
+          <i class="{{ member.addToCart}} wishlist-btn"></i>
+        </span>
         <img src="{{ member.image }}" alt="{{ member.name }}" />
         <h2 class="small-heading">{{ member.name }}</h2>
         <p class="description_para">{{ member.description }}</p>
