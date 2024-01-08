@@ -62,8 +62,7 @@
   width: 100%;
   position: absolute;
   top: 0px;
-
-  text-align: end;
+  text-align: start;
   z-index: 5;
   background-color: transparent;
 }
