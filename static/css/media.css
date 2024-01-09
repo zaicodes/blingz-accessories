@@ -16,13 +16,11 @@
     left: -100%;
     background-color: antiquewhite;
     transition: 0.5s;
-    /* opacity: 0;s */
     z-index: 5;
   }
   .navshow {
     transition: 0.5s;
     left: 0;
-    /* opacity: 1; */
   }
   .main-section-2-contact {
     grid-template-columns: 1fr 1fr !important;
@@ -78,5 +76,8 @@
 @media (max-width: 350px) {
   html {
     font-size: 5px;
+  }
+  .cart-info h2 {
+    display: none;
   }
 }

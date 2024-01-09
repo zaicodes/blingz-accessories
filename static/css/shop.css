@@ -63,9 +63,10 @@
   position: absolute;
   top: 0px;
   text-align: start;
-  z-index: 5;
+  z-index: 1;
   background-color: transparent;
 }
+
 .wishlist-btn {
   color: #3b3b3b;
   font-size: 20px;
