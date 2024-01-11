@@ -13,17 +13,22 @@
     <div class="main-grid">
       {% for member in company %}
       <div class="item">
-        <span class="showcartmain">
-          <i class="{{member.addToCart}} wishlist-btn"></i>
+        <span class="showcartmain wishlist-btn">
+          <i class="{{member.addToCart}} "></i>
         </span>
-        <img src="{{ member.image }}" alt="{{ member.image }}" />
-        <h2 class="small-heading">{{ member.name }}</h2>
+        <img
+          class="productimg"
+          src="{{ member.image }}"
+          alt="{{ member.image }}"
+        />
+        <h2 class="small-heading productname">{{ member.name }}</h2>
         <p class="description_para">{{ member.description }}</p>
-        <p class="para">£ {{ member.price }}</p>
+        <p class="para productprice">£ {{ member.price }}</p>
         <img class="rating" src="{{ member.rate }}" alt="{{ member.rating }}" />
       </div>
       {% endfor %}
     </div>
   </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 {% endblock %}
