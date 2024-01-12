@@ -114,59 +114,79 @@ $(document).ready(function () {
     <div class="cart-info">
       <h2 class="small-heading">${name}</h2>
       <p class="description_para">${price}</p>
+      <input type="number" min="1" max="10" aria-label="Update quantity" title="Update quantity" class="quantity-input" value="1" />
+      <br/>
       <i class="fa-solid fa-trash removebtn" aria-label="Removing-button" title="Remove item"></i>
     </div>
-    <input type="number" aria-label="Update quantity" title="Update quantity" id="" />
   </div>
 `;
 
     // Append the cart item to the cart grid
     $(".cart-grid").append(cartItem);
 
-    // Update the total price (you might need to adjust this logic based on your actual implementation)
-    var totalPrice =
-      parseFloat($(".totalprice div:last-child").text().replace("£", "")) +
-      parseFloat(price.replace("£", ""));
-    $(".totalprice div:last-child").text(`£ ${totalPrice}`);
+    // Update the total price
+    updateTotalPrice();
   }
-});
-document.addEventListener("click", function (event) {
-  const targetElement = event.target;
 
-  // Check if the clicked element has the class "removebtn"
-  if (targetElement.classList.contains("removebtn")) {
-    // Get the parent element of the remove button, which is the cart item
-    const cartItem = targetElement.closest(".cart-flex");
+  // Event listener for input change on quantity input fields
+  $(document).on("input", ".quantity-input", function () {
+    updateTotalPrice();
+    const inputValue = $(this).val();
+    if (!inputValue || isNaN(inputValue) || inputValue <= 0) {
+      $(this).val(1);
+    }
+    // Update the total price
+    updateTotalPrice();
 
-    // Check if the cart item exists before attempting to remove it
-    if (cartItem) {
-      // Get the price of the item being removed
-      const removedPrice = parseFloat(
-        cartItem.querySelector(".description_para").textContent.replace("£", "")
+    if (inputValue > 10) {
+      alert("Quantity should not exceed 10!");
+      $(this).val(1);
+      // You can replace the alert with your custom pop-up or other actions
+      updateTotalPrice();
+    }
+  });
+
+  // Update the total price
+  updateTotalPrice();
+  // Function to update the total price
+  function updateTotalPrice() {
+    var total = 0;
+
+    // Iterate over each cart item
+    $(".cart-flex").each(function () {
+      var quantity = parseFloat($(this).find(".quantity-input").val());
+      var price = parseFloat(
+        $(this).find(".description_para").text().replace("£", "")
       );
+      total += quantity * price;
+    });
 
-      // Remove the cart item
-      cartItem.remove();
+    $(".totalprice div:last-child").text(`£ ${total}`);
 
-      // Check if there are any remaining cart items
-      if ($(".cart-flex").length === 0) {
-        // If the cart is empty, hide the total and checkout button
-        $(".totalprice").addClass("hidden");
-        $(".checkoutbtn").addClass("hidden");
-        // Show the empty cart message
-        $(".emty-para").show();
-        $(".totalprice div:last-child").text(`£ 0`);
-
-        // Hide the cart grid
-        $(".cart-grid").addClass("hidden");
-      } else {
-        // Update the total price by subtracting the removed item's price
-        var totalPrice =
-          parseFloat($(".totalprice div:last-child").text().replace("£", "")) -
-          removedPrice;
-        $(".totalprice div:last-child").text(`£ ${totalPrice}`);
-        console.log(totalPrice);
-      }
+    if (total === 0) {
+      $(".totalprice").addClass("hidden");
+      $(".checkoutbtn").addClass("hidden");
+      $(".emty-para").show();
+      $(".cart-grid").addClass("hidden");
+    } else {
+      $(".totalprice").removeClass("hidden");
+      $(".checkoutbtn").removeClass("hidden");
+      $(".emty-para").hide();
+      $(".cart-grid").removeClass("hidden");
     }
   }
+
+  // Event listener for remove button click
+  $(document).on("click", ".removebtn", function () {
+    const cartItem = $(this).closest(".cart-flex");
+    const removedPrice = parseFloat(
+      cartItem.find(".description_para").text().replace("£", "")
+    );
+
+    // Remove the cart item
+    cartItem.remove();
+
+    // Update the total price
+    updateTotalPrice();
+  });
 });
