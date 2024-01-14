@@ -105,24 +105,40 @@ $(document).ready(function () {
       $(".checkoutbtn").removeClass("hidden"); // Show the checkout button
     }
 
-    // Create a new cart item
-    var cartItem = `
-  <div class="cart-flex">
-    <div>
-      <img src="${imgSrc}" alt="${name}" />
-    </div>
-    <div class="cart-info">
-      <h2 class="small-heading">${name}</h2>
-      <p class="description_para">${price}</p>
-      <input type="number" min="1" max="10" aria-label="Update quantity" title="Update quantity" class="quantity-input" value="1" />
-      <br/>
-      <i class="fa-solid fa-trash removebtn" aria-label="Removing-button" title="Remove item"></i>
-    </div>
-  </div>
-`;
+    const existingCartItem = $(".cart-flex").filter(function () {
+      return (
+        $(this).find(".small-heading").text() === name &&
+        $(this).find(".description_para").text() === price
+      );
+    });
 
-    // Append the cart item to the cart grid
-    $(".cart-grid").append(cartItem);
+    if (existingCartItem.length > 0) {
+      const quantityinput = existingCartItem.find(".quantity-input");
+      const currentquantity = parseInt(quantityinput.val());
+      const newquantity = currentquantity + 1;
+      if (newquantity > 10) {
+        alert("quantity should not exceed 10");
+        return;
+      }
+      quantityinput.val(newquantity);
+    } else {
+      // Create a new cart item
+      var cartItem = `
+ <div class="cart-flex">
+   <div>
+     <img src="${imgSrc}" alt="${name}" />
+   </div>
+   <div class="cart-info">
+     <h2 class="small-heading">${name}</h2>
+     <p class="description_para">${price}</p>
+     <input type="number" min="1" max="10" aria-label="Update quantity" title="Update quantity" class="quantity-input" value="1" />
+     <i class="fa-solid fa-trash removebtn" aria-label="Removing-button" title="Remove item"></i>
+   </div>
+ </div>
+`;
+      // Append the cart item to the cart grid
+      $(".cart-grid").append(cartItem);
+    }
 
     // Update the total price
     updateTotalPrice();
@@ -151,6 +167,7 @@ $(document).ready(function () {
   // Function to update the total price
   function updateTotalPrice() {
     var total = 0;
+    let totalquantity = 0;
 
     // Iterate over each cart item
     $(".cart-flex").each(function () {
@@ -158,7 +175,9 @@ $(document).ready(function () {
       var price = parseFloat(
         $(this).find(".description_para").text().replace("£", "")
       );
+      totalquantity += quantity;
       total += quantity * price;
+      $(".cart-btns span").text(totalquantity);
     });
 
     $(".totalprice div:last-child").text(`£ ${total}`);
