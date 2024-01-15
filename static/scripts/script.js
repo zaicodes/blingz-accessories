@@ -1,64 +1,68 @@
+// Get elements
 const menu = document.querySelector(".menu");
 const user = document.querySelector(".user-logo");
-const closelogin = document.querySelector(".close-login");
+const closeLogin = document.querySelector(".close-login");
 const login = document.querySelector(".login");
-const signinbtn = document.querySelector(".signin-btn");
+const signInBtn = document.querySelector(".signin-btn");
 const cart = document.querySelector(".cart");
-const closingbtn = document.querySelector(".closing-btn");
-const cartmain = document.querySelector(".cart-main");
-const wishlistbtn = document.querySelector(".wishlist-btn");
-const showcartbtns = document.querySelectorAll(".showcartmain");
-const emptypara = document.querySelector(".emty-para");
+const closingBtn = document.querySelector(".closing-btn");
+const cartMain = document.querySelector(".cart-main");
+const wishlistBtn = document.querySelector(".wishlist-btn");
+const showCartBtns = document.querySelectorAll(".showcartmain");
+const emptyPara = document.querySelector(".empty-para");
 
-// for showing cart section
-const showcartmain = function () {
-  cartmain.classList.add("wrapper");
+// For showing cart section
+const showCartMain = function () {
+  cartMain.classList.add("wrapper");
 };
-showcartbtns.forEach(function (e) {
+
+showCartBtns.forEach(function (e) {
   e.addEventListener("click", function () {
-    showcartmain();
+    showCartMain();
   });
 });
 
-// for hiding the the cart
-const hidecartmain = function () {
-  cartmain.classList.remove("wrapper");
+// For hiding the cart
+const hideCartMain = function () {
+  cartMain.classList.remove("wrapper");
 };
 
-closingbtn.addEventListener("click", hidecartmain);
+closingBtn.addEventListener("click", hideCartMain);
 
-// for the slide of navbar
+// For the slide of navbar
 menu.addEventListener("click", () => {
   document.querySelector(".nav-links").classList.toggle("navshow");
 });
 
-function toggleloginform() {
+function toggleLoginForm() {
   document.querySelector(".login").classList.toggle("wrapper");
 }
 
-// for the login form
+// For the login form
 user.addEventListener("click", () => {
-  toggleloginform();
-});
-closelogin.addEventListener("click", () => {
-  toggleloginform();
-});
-signinbtn.addEventListener("click", () => {
-  toggleloginform();
+  toggleLoginForm();
 });
 
-// contact form
-function Sendmail() {
+closeLogin.addEventListener("click", () => {
+  toggleLoginForm();
+});
+
+signInBtn.addEventListener("click", () => {
+  toggleLoginForm();
+});
+
+// Contact form
+function sendMail() {
   console.log("asdfskdlafbnsdkl");
   var params = {
-    from_name: document.getElementById("fullname").value,
-    email_id: document.getElementById("email_id").value,
+    fromName: document.getElementById("fullname").value,
+    emailId: document.getElementById("email_id").value,
     message: document.getElementById("message").value,
   };
 
   const value = document.getElementById("email_id").value;
   if (value.indexOf("@") === -1) {
-    alert("plesae enter the email");
+    alert("please enter the email");
     return;
   } else {
     emailjs
@@ -72,22 +76,22 @@ function Sendmail() {
   }
 }
 
-// for making add to cart functionality
+// For making add to cart functionality
 $(document).ready(function () {
   $(".wishlist-btn").click(function () {
-    var productname = $(this).siblings(".productname").text();
-    var productprice = $(this).siblings(".para").text();
-    var productimg = $(this).siblings(".productimg").attr("src");
+    var productName = $(this).siblings(".productname").text();
+    var productPrice = $(this).siblings(".para").text();
+    var productImg = $(this).siblings(".productimg").attr("src");
 
     console.log(
       "Product added to wishlist",
-      productname,
-      productprice,
-      productimg
+      productName,
+      productPrice,
+      productImg
     );
 
     // Add the product to the cart
-    addToCart(productname, productprice, productimg);
+    addToCart(productName, productPrice, productImg);
   });
 });
 
@@ -109,29 +113,31 @@ function addToCart(name, price, imgSrc) {
   });
 
   if (existingCartItem.length > 0) {
-    const quantityinput = existingCartItem.find(".quantity-input");
-    const currentquantity = parseInt(quantityinput.val());
-    const newquantity = currentquantity + 1;
-    if (newquantity > 10) {
+    const quantityInput = existingCartItem.find(".quantity-input");
+    const currentQuantity = parseInt(quantityInput.val());
+    const newQuantity = currentQuantity + 1;
+    if (newQuantity > 10) {
       alert("quantity should not exceed 10");
       return;
     }
-    quantityinput.val(newquantity);
+    quantityInput.val(newQuantity);
   } else {
     // Create a new cart item
     var cartItem = `
  <div class="cart-flex">
-  <div>
-    <img src="${imgSrc}" alt="${name}" />
-  </div>
-  <div class="cart-info">
-    <h2 class="small-heading">${name}</h2>
-    <p class="description_para">${price}</p>
-    <input type="number" min="1" max="10" aria-label="Update quantity" title="Update quantity" class="quantity-input" value="1" />
-    <i class="fa-solid fa-trash removebtn" aria-label="Removing-button" title="Remove item"></i>
-  </div>
+   <div>
+     <img src="${imgSrc}" alt="${name}" />
+   </div>
+   <div class="cart-info">
+     <h2 class="small-heading">${name}</h2>
+     <p class="description_para">${price}</p>
+     <input type="number" min="1" max="10" aria-label="Update quantity" title="Update quantity" class="quantity-input" value="1" />
+
+     <i class="fa-solid fa-trash removebtn" aria-label="Removing-button" title="Remove item"></i>
+   </div>
  </div>
 `;
+
     // Append the cart item to the cart grid
     $(".cart-grid").append(cartItem);
   }
@@ -139,8 +145,8 @@ function addToCart(name, price, imgSrc) {
   // Update the total price
   updateTotalPrice();
 
-  //store cart into local storage
-  savecarttolocalstorage();
+  // Store cart into local storage
+  saveCartToLocalStorage();
 }
 
 // Event listener for input change on quantity input fields
@@ -159,15 +165,16 @@ $(document).on("input", ".quantity-input", function () {
     // You can replace the alert with your custom pop-up or other actions
     updateTotalPrice();
   }
-  savecarttolocalstorage();
+  saveCartToLocalStorage();
 });
 
 // Update the total price
 updateTotalPrice();
+
 // Function to update the total price
 function updateTotalPrice() {
   var total = 0;
-  let totalquantity = 0;
+  let totalQuantity = 0;
 
   // Iterate over each cart item
   $(".cart-flex").each(function () {
@@ -175,9 +182,9 @@ function updateTotalPrice() {
     var price = parseFloat(
       $(this).find(".description_para").text().replace("£", "")
     );
-    totalquantity += quantity;
+    totalQuantity += quantity;
     total += quantity * price;
-    $(".cart-btns span").text(totalquantity);
+    $(".cart-btns span").text(totalQuantity);
   });
 
   $(".totalprice div:last-child").text(`£ ${total}`);
@@ -208,12 +215,12 @@ $(document).on("click", ".removebtn", function () {
   // Update the total price
   updateTotalPrice();
 
-  savecarttolocalstorage();
+  saveCartToLocalStorage();
 });
 
-//function to save cart items to local storage
-function savecarttolocalstorage() {
-  const cartitems = [];
+// Function to save cart items to local storage
+function saveCartToLocalStorage() {
+  const cartItems = [];
 
   $(".cart-flex").each(function () {
     const name = $(this).find(".small-heading").text();
@@ -222,11 +229,12 @@ function savecarttolocalstorage() {
     const quantity = $(this).find(".quantity-input").val();
 
     const cartItem = { name, price, imgSrc, quantity };
-    cartitems.push(cartItem);
+    cartItems.push(cartItem);
   });
 
-  localStorage.setItem("cartItems", JSON.stringify(cartitems));
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
+
 // Function to load cart items from local storage
 function loadCartFromLocalStorage() {
   const storedCartItems = localStorage.getItem("cartItems");
@@ -236,11 +244,17 @@ function loadCartFromLocalStorage() {
 
     cartItems.forEach((item) => {
       addToCart(item.name, item.price, item.imgSrc);
-      const quantityinput = $(".cart-flex").last().find(".quantity-input");
-      quantityinput.val(item.quantity);
+      const quantityInput = $(".cart-flex").last().find(".quantity-input");
+      quantityInput.val(item.quantity);
     });
 
     // Update total price after loading items
     updateTotalPrice();
   }
 }
+
+// Load cart items from local storage on page load
+$(document).ready(function () {
+  loadCartFromLocalStorage();
+  updateTotalPrice();
+});
