@@ -98,8 +98,8 @@ $(document).ready(function () {
 // Function to add a product to the cart
 function addToCart(name, price, imgSrc) {
   // Check if the cart is currently empty
-  if ($(".emty-para").is(":visible")) {
-    $(".emty-para").hide(); // Hide the empty cart message
+  if ($(".empty-para").is(":visible")) {
+    $(".empty-para").hide(); // Hide the empty cart message
     $(".cart-grid").removeClass("hidden"); // Show the cart grid
     $(".totalprice").removeClass("hidden");
     $(".checkoutbtn").removeClass("hidden"); // Show the checkout button
@@ -192,12 +192,13 @@ function updateTotalPrice() {
   if (total === 0) {
     $(".totalprice").addClass("hidden");
     $(".checkoutbtn").addClass("hidden");
-    $(".emty-para").show();
+    $(".empty-para").show();
     $(".cart-grid").addClass("hidden");
+    $(".cart-btns span").text(0);
   } else {
     $(".totalprice").removeClass("hidden");
     $(".checkoutbtn").removeClass("hidden");
-    $(".emty-para").hide();
+    $(".empty-para").hide();
     $(".cart-grid").removeClass("hidden");
   }
 }
