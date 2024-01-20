@@ -8,13 +8,13 @@
 
 ## Project Goals
 
-The goal of this project is to create a responsive and dynamic webpage that showcases accessories for an accessories brand, Blingz.
+The goal of this project is to create a responsive and dynamic webpage that showcases accessories for the popular fashion brand, Blingz.
 Blingz offers a diverse collection of curated, handcrafted jewellery with a user-friendly interface and detailed descriptions for informed choices. The site ensures effortless cart management, allowing seamless updates and personalised profiles for swift checkouts.
 With a responsive design, Blingz provides a consistent and enjoyable browsing experience across devices.
 
 ### Target Audience
 
-Blingz targets fashion-forward individuals with a passion for jewellery. This audience, keen on curated and elegant pieces, values user-friendly features like detailed descriptions, ratings, effortless cart management, and personalized profiles for quick checkouts.
+Blingz targets fashion-forward individuals with a passion for jewellery. This audience, keen on curated and elegant pieces, values user-friendly features like detailed descriptions, ratings, effortless cart management, and personalized profiles for quick checkouts. They actively participate by freely rating items and leaving reviews, contributing to a vibrant community within the brand.
 
 ## User Experience (UX)
 
@@ -23,22 +23,30 @@ Blingz targets fashion-forward individuals with a passion for jewellery. This au
 As a first-time visitor, I want to:
 
 - Easily navigate through the website to find a specific category of jewellery.
-- Responsive to different screen sizes.
+- Have a user-friendly search functionality to quickly find a specific piece or type of jewellery.
+- Filter search results based on criteria like material, price range, and gemstone.
+- Responsive to different screen sizes
 - See clear and detailed product pages with high-quality images, pricing, and product descriptions.
-- Easily create a user account to track my orders.
+- Easily create a user account to track my orders and save favourite items.
 - Read reviews and ratings from other customers to make informed purchasing decisions ((MAYBE)).
 
 As a returning user, I want to:
 
 - Log in quickly and securely using my existing credentials.
 - Ability to delete the account.
+- Save items to my Wishlist for future consideration or purchase
 - Effortlessly add items to my shopping cart for a seamless shopping experience.
 - Have the ability to update the cart, adjust quantities, and remove items before proceeding to checkout.
+- Change my password and username easily from the account settings page ((MAYBE)).
+- Retrieve my password securely in case I forget it, through a straightforward password recovery process ((MAYBE)).
+- Easily transfer items from my cart to my wishlist for future consideration ((MAYBE)).
 
 As a frequent user, I want to:
 
+- Save items to my Wishlist for future consideration or purchase.
 - Have multiple ways for contacting customer support, including a contact form for written queries and find and utilize contact information, such as phone numbers and email addresses, for more urgent inquiries.
 - Connect with the brand on various social media platforms to stay informed about events, promotions, and community updates.
+- Provide feedback on items by rating them⭐ and leaving detailed reviews.
 - Access quick-sharing buttons on each product page for seamless sharing, and share my favourite jewellery items with friends and family through various social media platforms, including WhatsApp ((MAYBE)).
 - Stay updated on the latest trends, styling tips, and jewellery insights by easily accessing the blog section for the newest posts ((MAYBE)).
 - Engage with the community by commenting on blog posts and sharing my thoughts with other users ((MAYBE)).
@@ -70,38 +78,35 @@ I used Midjourney to create pictures of models wearing jewelry and to generate p
 
 ### Existing Features
 
-Navbar and footer:
-
-- Navigation bar at the top of each page to help users easily go to any page of the website they need.
-- A footer at the bottom of every page, which contain similar options, such as pages, product categories, and ways to stay connected.
-
 Home page:
 
-- Homepage with a brief introduction of the brand, showcasing some products in a grid format.
+- Homepage with a brief introduction of the brand, showcasing some products in a grid format. Each product has an image, title, and button to explore more.
 - section that consists of customer ratings and reviews.
-- Product category that enables user to focus their search in terms of the type of jewellery.
-
-About page:
-
-- brief overview of the company's mission and values.
-- A section that emphasizes the customer services and protection that the buyer will gain.
+- product filter feature, allowing customers to narrow down their search by category or price range.
+- Product page that displays detailed product information, including additional images, reviews, customer ratings, and related items.
 
 Shop page:
 
 - Display a comprehensive shop section featuring a list of jewellery items.
 - Include essential details such as item descriptions, prices, and ratings for each product.
 - Allow users to add products to their virtual shopping cart before purchasing them.
+- Wishlist: Provide an option for users to save/favourite items they like so they can easily access them later on.
 
 User Accounts:
 
 - Provide users with the option to create a personal account on the website and update their details.
 - Allow registered users to log in securely to access personalized features.
-- Access the order list.
 
 Shopping Cart Management:
 
-- Enable users to add items to their shopping cart for a convenient shopping experience and see the total cost.
+- Enable users to add items to their shopping cart for a convenient shopping experience.
+- Allow users to view the contents of their cart, review item details, and see the total cost.
 - Implement the ability to adjust and update the quantity of items in the cart. Provide an option to delete unwanted items from the shopping cart.
+
+Rating and Reviews:
+
+- Allow users to rate individual jewellery items based on their preferences.
+- Implement a review system, enabling users to leave detailed reviews and comments under each product.
 
 Contact page:
 

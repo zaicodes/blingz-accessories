@@ -101,23 +101,27 @@
     </main>
 
     <!-- login form  -->
-    <div class="login">
+    <div class="login" id="login-popup">
       <div class="login-form-home">
         <i class="fa-solid fa-3x fa-xmark close-login"></i>
         <h1 class="small-heading">Login</h1>
-        <form>
+        <form method="post" action="{{ url_for('login') }}">
           <input
             type="email"
+            id="login-email"
             aria-label="Enter email"
             placeholder="Enter you email"
           />
           <br />
           <input
+            id="login-password"
             type="password"
             aria-label="Enter password"
             placeholder="Enter your password"
           />
-          <button class="main-btn">Log in</button>
+          <button class="main-btn" type="button" onclick="Login()">
+            Log in
+          </button>
           <p class="para">
             Don't have an account?
             <a class="signin-btn" href="./signup">Sign in</a>
@@ -190,7 +194,26 @@
     </footer>
   </body>
   <!-- Javascript  -->
-  <!-- Javascript -->
+  <script>
+    function Login() {
+      const email = $("#login-email").val();
+      const password = $("#login-password").val();
+
+      $.ajax({
+        type: "POST",
+        url: "/login", //update the endpoint based on flask
+        data: { email: email, password: password },
+        success: function (response) {
+          //handle the response from the server
+          console.log(response);
+        },
+        error: function (error) {
+          //handle errors
+          console.log(error);
+        },
+      });
+    }
+  </script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="{{ url_for('static', filename='scripts/script.js')}}"></script>
 </html>

@@ -123,7 +123,6 @@ span {
   font-size: 18px;
   margin-bottom: 30px;
 }
-
 .cart-section {
   position: fixed;
   left: 50%;
@@ -132,10 +131,10 @@ span {
   transition: 0.5s;
   background-color: rgb(255, 255, 255);
   padding: 40px;
-  max-width: 580px;
+  max-width: 480px;
   max-height: 600px;
+  box-shadow: 0 5px 25px black;
   overflow: auto;
-  box-shadow: 0 5px 25px #3b3b3b;
 }
 .cart-grid img {
   max-width: 200px;
@@ -144,7 +143,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 80px;
   margin-bottom: 20px;
 }
 .cart-flex .small-heading {
@@ -168,16 +167,22 @@ span {
 .cart-info p {
   text-align: left;
   font-size: 18px;
+
   max-width: 180px;
   margin: 5px 0px;
 }
-
+.cart-info p {
+  display: inline-block;
+}
 .cart-flex input {
   width: 50px;
-  height: 50px;
+  height: 40px;
   font-size: 18px;
+
+  display: inline;
+  margin-left: 10px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.323);
+  background-color: rgba(226, 8, 8, 0.323);
   backdrop-filter: blur(5px);
   border: 1px solid #fc6868;
 }

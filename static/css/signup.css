@@ -55,3 +55,10 @@
   font-size: 18px;
   line-height: 20px;
 }
+.email_matching {
+  background-color: #fc6868;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 10px;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block content %}
+
+<section class="section-1-profile">
+  <!-- Section 1 / Page header  -->
+  <div class="container">
+    <h1 class="heading">Profile</h1>
+  </div>
+</section>
+
+<section class="section-2-profile">
+  <!-- Section 2 / User details -->
+  <div class="container">
+    <p>Email: {{ user_data.email }}</p>
+    <p>Username: {{ user_data.username }}</p>
+    <!-- Add more fields as needed -->
+  </div>
+</section>
+
+{% endblock %}

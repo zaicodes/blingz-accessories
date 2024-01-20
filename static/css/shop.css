@@ -24,6 +24,7 @@
 }
 .description_para {
   color: #3b3b3b;
+  /* margin: 10px 0px; */
   font-family: Jost, sans-serif;
   text-align: center;
   font-weight: 400;
