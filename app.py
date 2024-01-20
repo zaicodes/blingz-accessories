@@ -29,7 +29,9 @@ def contact():
 
 @app.route("/profile")
 def profile():
-    return render_template("profile.html")
+    # Assuming you have a way to retrieve user data from the session or database
+    user_data = {"email": "example@email.com", "username": "example_user"}
+    return render_template("profile.html", user_data=user_data)
 
 @app.route("/shop")
 def shop():
@@ -47,12 +49,15 @@ def login():
 
         if existing_user and check_password_hash(existing_user["password"], password):
             flash("Login successful", "success")
-            return redirect(url_for("profile.html"))
+            return redirect(url_for("profile"))
         else:
             flash("Invalid email or password", "error")
-            return redirect(url_for("profile"))
+            # Redirect the user back to the login page or another route for unsuccessful login.
+            return redirect(url_for("index"))
+        
     else:
-        return render_template("profile")
+        # Handle GET requests separately if needed
+        return render_template("login.html")
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -98,7 +103,6 @@ def signup():
             return render_template("signup.html", username_exists=username_exists)
 
     return render_template("signup.html", username_exists=username_exists, success_exists=success_exists)
-
 
 
 # Endpoint to provide Products data as JSON

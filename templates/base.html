@@ -101,21 +101,36 @@
     </main>
 
     <!-- login form  -->
-    <div class="login" id="login-popup">
+
+    <!-- This will hide the login form if you're already logged in and it will show the profile instead-->
+    <div
+      class="{{ 'login wrapper' if 'error' in get_flashed_messages (with_categories=true) else 'login' }}"
+      id="login-popup"
+    >
       <div class="login-form-home">
         <i class="fa-solid fa-3x fa-xmark close-login"></i>
         <h1 class="small-heading">Login</h1>
+
+        <!-- if login is unsuccessful -->
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        "error" %}
+        <p class="email_matching heading">Invalid password or email</p>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+
         <form method="post" action="{{ url_for('login') }}">
           <input
             type="email"
+            name="password"
             id="login-email"
             aria-label="Enter email"
-            placeholder="Enter you email"
+            placeholder="Enter your email"
           />
           <br />
           <input
-            id="login-password"
             type="password"
+            name="password"
+            id="login-password"
             aria-label="Enter password"
             placeholder="Enter your password"
           />
@@ -124,7 +139,7 @@
           </button>
           <p class="para">
             Don't have an account?
-            <a class="signin-btn" href="./signup">Sign in</a>
+            <a class="signin-btn" href="./signup">Sign up</a>
           </p>
         </form>
       </div>
