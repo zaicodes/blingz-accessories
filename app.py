@@ -1,7 +1,6 @@
-from flask import Flask, render_template, jsonify, request, redirect, url_for, flash , session
+from flask import Flask, render_template, jsonify, request, redirect, url_for, flash, session
 import os
 import json
-import secrets
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -27,12 +26,6 @@ def about():
 def contact():
     return render_template("contact.html")
 
-@app.route("/profile")
-def profile():
-    # Assuming you have a way to retrieve user data from the session or database
-    user_data = {"email": "example@email.com", "username": "example_user"}
-    return render_template("profile.html", user_data=user_data)
-
 @app.route("/shop")
 def shop():
     data = []
@@ -46,19 +39,26 @@ def login():
         email = request.form.get("email")
         password = request.form.get("password")
         existing_user = mongo.db.users.find_one({"email": email})
-
+        session["logged_in"] = False
+        
         if existing_user and check_password_hash(existing_user["password"], password):
             flash("Login successful", "success")
+            # Set the 'logged_in' session variable to True
+            session["logged_in"] = True
             return redirect(url_for("profile"))
         else:
             flash("Invalid email or password", "error")
-            # Redirect the user back to the login page or another route for unsuccessful login.
             return redirect(url_for("index"))
-        
-    else:
-        # Handle GET requests separately if needed
-        return render_template("login.html")
 
+    # Redirect to index if the request method is not POST
+    return redirect(url_for("index"))
+
+
+@app.route("/profile")
+def profile():
+    # Assuming you have a way to retrieve user data from the session or database
+    user_data = {"email": "example@email.com", "username": "example_user"}
+    return render_template("profile.html", user_data=user_data)
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -103,7 +103,6 @@ def signup():
             return render_template("signup.html", username_exists=username_exists)
 
     return render_template("signup.html", username_exists=username_exists, success_exists=success_exists)
-
 
 # Endpoint to provide Products data as JSON
 @app.route("/api/products")
