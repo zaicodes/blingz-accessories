@@ -16,7 +16,11 @@ except Exception as e:
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    existing_user = None
+    if session.get("logged_in"):
+        email = session.get("email")
+        existing_user = mongo.db.users.find_one({"email": email})
+    return render_template("index.html", existing_user=existing_user)
 
 @app.route("/about")
 def about():
@@ -39,18 +43,18 @@ def login():
         email = request.form.get("email")
         password = request.form.get("password")
         existing_user = mongo.db.users.find_one({"email": email})
-        session["logged_in"] = False
         
         if existing_user and check_password_hash(existing_user["password"], password):
             flash("Login successful", "success")
             # Set the 'logged_in' session variable to True
             session["logged_in"] = True
+            session["email"] = email  # Optionally store the email in the session
             return redirect(url_for("profile"))
         else:
             flash("Invalid email or password", "error")
-            return redirect(url_for("index"))
 
-    # Redirect to index if the request method is not POST
+    # Set the 'logged_in' session variable to False if login is not successful
+    session["logged_in"] = False
     return redirect(url_for("index"))
 
 

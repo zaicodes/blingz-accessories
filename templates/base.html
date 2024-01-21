@@ -61,11 +61,22 @@
             ><a href="./shop">Shop</a><a href="./contact">Contact</a>
           </div>
           <div class="cart-btns">
+            {% if session.logged_in %}
+            <a href="/profile">
+              <i
+                class="fa fa-3x fa-user profile-logo"
+                aria-label="User profile"
+                aria-hidden="true"
+              ></i
+            ></a>
+            {% else %}
             <i
               class="fa fa-3x fa-user user-logo"
               aria-label="User signin"
               aria-hidden="true"
             ></i>
+
+            {% endif %}
             <div href="#" class="cart">
               <i
                 class="fa-solid fa-3x fa-cart-shopping showcartmain"
@@ -102,7 +113,7 @@
 
     <!-- login form  -->
 
-    <div class="login wrapper" id="login-popup">
+    <div class="login" id="login-popup">
       <div class="login-form-home">
         <i class="fa-solid fa-3x fa-xmark close-login"></i>
         <h1 class="small-heading">Login</h1>
