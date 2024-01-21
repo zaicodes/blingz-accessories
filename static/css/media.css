@@ -81,3 +81,13 @@
     display: none;
   }
 }
+
+/* profile page */
+
+@media (max-width: 400px) {
+  .profile_setting form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+}

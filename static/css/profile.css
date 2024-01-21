@@ -1,0 +1,81 @@
+.section-2-profile {
+  background-color: #ffe4e4;
+  padding: 100px 0px;
+}
+.username {
+  color: black;
+  font-size: 28px;
+}
+.main-profile {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profile-content {
+  flex: 1 0 300px;
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-content img {
+  max-width: 200px;
+  margin-bottom: 40px;
+}
+.update-btn {
+  padding: 5px;
+  cursor: pointer;
+}
+.removedatabasebtn:hover {
+  color: pink;
+  cursor: pointer;
+}
+.profile_setting {
+  flex: 1 0 300px;
+  background-color: white;
+}
+.profile_setting form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+.profile_setting input {
+  margin: 20px 0px;
+  border: none;
+  font-size: 18px;
+  padding: 10px 10px;
+  background-color: rgba(211, 66, 66, 0.323);
+}
+
+.profile_setting button {
+  margin: 10px 0px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.profile-btns {
+  display: flex;
+  gap: 30px;
+}
+.deletebtnprofile {
+  background-color: #3b3b3b;
+}
+.deletebtnprofile:hover {
+  background-color: pink;
+}
+
+.profile-label {
+  color: #3b3b3b;
+  margin: 0.3px 0px;
+  text-align: left;
+  font-family: Jost, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+}
