@@ -1,6 +1,16 @@
 .section-2-profile {
   background-color: #ffe4e4;
-  padding: 100px 0px;
+  padding: 100px 0px 0px;
+}
+.section-3-profile {
+  padding: 10px 0px;
+  background-color: #ffe4e4;
+}
+.section-3-profile .main-grid {
+  margin: 50px 0px;
+  display: grid;
+  gap: 140px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .username {
   color: black;
@@ -78,4 +88,11 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 20px;
+}
+.profile-grid .item {
+  background-color: white;
+  box-shadow: 0px 00px 10px rgba(0, 0, 0, 0.3);
+}
+.profile-grid .productprice {
+  margin-bottom: 40px;
 }
