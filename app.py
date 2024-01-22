@@ -4,9 +4,11 @@ import json
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
 
-app = Flask(__name__)
+if os.path.exists("env.py"):
+    import env
 
-app.config.from_pyfile("config.py")
+
+app = Flask(__name__)
 
 try:
     mongo = PyMongo(app)
@@ -114,4 +116,6 @@ def products():
     return jsonify(products_data)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
