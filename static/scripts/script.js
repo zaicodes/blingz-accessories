@@ -301,8 +301,9 @@ function validatePassword() {
   }
 }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
 user.addEventListener("click", () => {
   toggleLoginForm();
 });
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;

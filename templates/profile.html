@@ -11,9 +11,22 @@
   <div class="container">
     <div class="main-profile">
       <div class="profile-content">
-        <h2 class="username para">HI {{ username }} Welcome to profile page</h2>
+        <h2 class="username para">
+          HI {{user_data.username}} Welcome to profile page
+        </h2>
         <img src="../static/images/profilepicture.png" alt="" />
         <button class="main-btn order-btn">View my orders</button>
+
+        <form id="logoutForm" action="{{ url_for('logout') }}" method="post">
+          <button
+            class="main-btn logout-btn"
+            type="submit"
+            value="Logout"
+            id="logoutBtn"
+          >
+            Logout
+          </button>
+        </form>
       </div>
       <div class="profile_setting">
         <form method="post" action="">
@@ -84,4 +97,12 @@
     </div>
   </div>
 </section>
+
+<script>
+  $(document).ready(function () {
+    $("#logoutBtn").click(function () {
+      $("#logoutForm").submit();
+    });
+  });
+</script>
 {% endblock %}

@@ -70,14 +70,17 @@ def profile():
         cart_items = request.get_json().get("cartItems", [])
 
         user_email = session.get("email")
+        user_data = mongo.db.users.find_one({"email": user_email})
 
         # Update user cart in the database
         if user_email:
             update_user_cart(user_email, cart_items)
             return jsonify({"message": "Cart updated successfully"})
 
-    # Assuming you have a way to retrieve user data from the session or database
-    user_data = {"email": "example@email.com", "username": "example_user"}
+    # Retrieve the actual user data from the MongoDB database
+    user_email = session.get("email")
+    user_data = mongo.db.users.find_one({"email": user_email})
+
     return render_template("profile.html", user_data=user_data)
 
 def update_user_cart(email , cart_items):
@@ -138,6 +141,14 @@ def signup():
 @app.route("/api/products")
 def products():
     return jsonify(products_data)
+
+@app.route("/logout", methods=["POST"])
+def logout():
+    # Clear the session data
+    session.clear()
+    flash("Logout successful", "success")
+    return redirect(url_for("index"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
