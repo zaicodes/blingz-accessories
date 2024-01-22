@@ -1,9 +1,9 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for, flash, session
 import os
 import json
+import secrets
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
-
 if os.path.exists("env.py"):
     import env
 
@@ -63,11 +63,32 @@ def login():
     return redirect(url_for("index"))
 
 
-@app.route("/profile")
+@app.route("/profile", methods=["GET", "POST"])
 def profile():
+    if request.method == "POST":
+        # Get the cart items from the request
+        cart_items = request.get_json().get("cartItems", [])
+
+        user_email = session.get("email")
+
+        # Update user cart in the database
+        if user_email:
+            update_user_cart(user_email, cart_items)
+            return jsonify({"message": "Cart updated successfully"})
+
     # Assuming you have a way to retrieve user data from the session or database
     user_data = {"email": "example@email.com", "username": "example_user"}
     return render_template("profile.html", user_data=user_data)
+
+def update_user_cart(email , cart_items):
+    # Assuming you have a 'users' collection in your MongoDB
+    user_collection = mongo.db.users
+
+    # Find the user by email
+    user  = user_collection.find_one({"email": email})
+    if user:
+        user_collection.update_one({"email": email}, {"$set": {"cart": cart_items}})
+
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():

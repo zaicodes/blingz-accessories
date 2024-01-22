@@ -39,9 +39,6 @@ function toggleLoginForm() {
 }
 
 // For the login form
-user.addEventListener("click", () => {
-  toggleLoginForm();
-});
 
 closeLogin.addEventListener("click", () => {
   toggleLoginForm();
@@ -254,6 +251,38 @@ function loadCartFromLocalStorage() {
   }
 }
 
+// transfer the cart data from javascript to database
+$(".checkoutbtn").click(function () {
+  var cartItems = [];
+  $(".cart-flex").each(function () {
+    var itemName = $(this).find(".small-heading").text();
+    var itemPrice = $(this).find(".description_para").text();
+    var itemImg = $(this).find("img").attr("src");
+    var itemQuantity = $(this).find(".quantity-input").val();
+
+    var cartItem = {
+      name: itemName,
+      price: itemPrice,
+      imgSrc: itemImg,
+      quantity: itemQuantity,
+    };
+    cartItems.push(cartItem);
+  });
+  $.ajax({
+    type: "POST",
+    url: "/profile",
+    contentType: "application/json; charset=utf-8",
+
+    data: JSON.stringify({ cartItems: cartItems }),
+    success: function (response) {
+      alert(response.message);
+    },
+    error: function (error) {
+      console.error("Error updating cart:", error);
+    },
+  });
+});
+
 // Load cart items from local storage on page load
 $(document).ready(function () {
   loadCartFromLocalStorage();
@@ -274,3 +303,6 @@ function validatePassword() {
 
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
+user.addEventListener("click", () => {
+  toggleLoginForm();
+});
