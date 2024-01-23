@@ -256,25 +256,31 @@ $(".checkoutbtn").click(function () {
   var cartItems = [];
   $(".cart-flex").each(function () {
     var itemName = $(this).find(".small-heading").text();
-    var itemPrice = $(this).find(".description_para").text();
-    var itemImg = $(this).find("img").attr("src");
-    var itemQuantity = $(this).find(".quantity-input").val();
 
+    var itemPricetext = $(this).find(".description_para").text();
+    var itemPrice = parseFloat(itemPricetext.match(/\d+(\.\d+)?/)[0]);
+
+    var itemImg = $(this).find("img").attr("src");
+
+    var itemQuantity = $(this).find(".quantity-input").val();
+    var totalPrice = itemPrice * parseInt(itemQuantity);
     var cartItem = {
       name: itemName,
-      price: itemPrice,
+      price: totalPrice,
       imgSrc: itemImg,
       quantity: itemQuantity,
     };
+
     cartItems.push(cartItem);
   });
-  // Cart items transferring to the database
   $.ajax({
     type: "POST",
     url: "/profile",
     contentType: "application/json; charset=utf-8",
+
     data: JSON.stringify({ cartItems: cartItems }),
     success: function (response) {
+      // alert(response.message);
       window.location.href = "/profile";
     },
     error: function (error) {
