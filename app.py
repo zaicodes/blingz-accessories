@@ -120,10 +120,6 @@ def remove_item_from_cart(email, item_to_remove):
         {"$pull":{"cart":item_to_remove}}
     )
 
-
-     
-
-
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     username_exists = False

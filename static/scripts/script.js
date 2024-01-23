@@ -283,6 +283,32 @@ $(".checkoutbtn").click(function () {
   });
 });
 
+// remove the data from the database
+$(document).on("click", ".removedatabasebtn", function () {
+  const cartItem = $(this).closest(".item");
+
+  // Create an object representing the item to be removed
+  const itemName = cartItem.find(".productname").text();
+  const itemToRemove = {
+    name: itemName,
+  };
+
+  // Send AJAX request to remove the item from the database
+  $.ajax({
+    type: "POST",
+    url: "/remove_item",
+    contentType: "application/json; charset=utf-8",
+    data: JSON.stringify({ itemToRemove: itemToRemove }),
+    success: function () {
+      // Remove the item from the UI
+      cartItem.remove();
+    },
+    error: function (error) {
+      console.error("Error removing item:", error);
+    },
+  });
+});
+
 // Load cart items from local storage on page load
 $(document).ready(function () {
   loadCartFromLocalStorage();

@@ -90,7 +90,16 @@
         />
         <h2 class="small-heading productname">{{ cart_item.name }}</h2>
         <p class="description_para">
-          Quantity : {{ cart_item.quantity }}
+          Quantity :
+          <input
+            type="number"
+            min="1"
+            max="10"
+            aria-label="Update quantity"
+            title="Update quantity"
+            class="profile-item-quantity"
+            value="{{ cart_item.quantity }}"
+          />
           <button class="main-btn update-btn">update</button>
           <i
             class="fa-solid fa-trash removedatabasebtn"
