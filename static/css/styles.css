@@ -156,7 +156,7 @@ span {
   font-size: 3.6rem;
   line-height: 1.8;
   text-align: left;
-  margin-top: 50px;
+  margin-top: 30px;
   color: #fc6868;
 }
 
@@ -188,6 +188,11 @@ span {
 }
 .cart-flex input:focus {
   background-color: #fc6868;
+}
+
+.cart-section .email_matching {
+  margin-top: 25px !important;
+  margin-bottom: 0;
 }
 
 .wrapper {

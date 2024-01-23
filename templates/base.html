@@ -100,7 +100,13 @@
     <main class="cart-main">
       <div class="cart-section">
         <div class="closing-btn" title="Close">x</div>
-
+        {% if session.logged_in %}
+        <br />
+        {% else %}
+        <div class="email_matching heading" title="Login">
+          Please log-in for checkout
+        </div>
+        {% endif %}
         <h1 class="cart-heading">Your Cart</h1>
         <p class="empty-para">Cart is empty</p>
 
