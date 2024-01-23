@@ -81,19 +81,26 @@
 <section class="section-3-profile">
   <div class="container">
     <div class="main-grid profile-grid">
+      {% for cart_item in cart_items_from_db %}
       <div class="item">
-        <img class="productimg" src="../static/images/products/11.png" />
-        <h2 class="small-heading productname">Name of the product</h2>
+        <img
+          class="productimg"
+          src="{{ cart_item.imgSrc }}"
+          alt="{{ cart_item.name }}"
+        />
+        <h2 class="small-heading productname">{{ cart_item.name }}</h2>
         <p class="description_para">
-          Quantity : 5 <button class="main-btn update-btn">update</button>
+          Quantity : {{ cart_item.quantity }}
+          <button class="main-btn update-btn">update</button>
           <i
             class="fa-solid fa-trash removedatabasebtn"
             aria-label="Removing-button"
             title="Remove item"
           ></i>
         </p>
-        <p class="para productprice">Price : $300</p>
+        <p class="para productprice">Price : {{ cart_item.price }}</p>
       </div>
+      {% endfor %}
     </div>
   </div>
 </section>

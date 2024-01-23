@@ -80,8 +80,11 @@ def profile():
     # Retrieve the actual user data from the MongoDB database
     user_email = session.get("email")
     user_data = mongo.db.users.find_one({"email": user_email})
+    
+    # Fetching cart items from the user's data
+    cart_items_from_db = user_data.get("cart", [])
 
-    return render_template("profile.html", user_data=user_data)
+    return render_template("profile.html", user_data=user_data, cart_items_from_db=cart_items_from_db)
 
 def update_user_cart(email , cart_items):
     # Assuming you have a 'users' collection in your MongoDB
