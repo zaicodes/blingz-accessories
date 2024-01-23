@@ -75,13 +75,12 @@ def profile():
         # Update user cart in the database
         if user_email:
             update_user_cart(user_email, cart_items)
-            return jsonify({"message": "Cart updated successfully"})
 
     # Retrieve the actual user data from the MongoDB database
     user_email = session.get("email")
     user_data = mongo.db.users.find_one({"email": user_email})
-    
-    # Fetching cart items from the user's data
+
+    # Fetch cart items from the user's data
     cart_items_from_db = user_data.get("cart", [])
 
     return render_template("profile.html", user_data=user_data, cart_items_from_db=cart_items_from_db)
@@ -94,6 +93,35 @@ def update_user_cart(email , cart_items):
     user  = user_collection.find_one({"email": email})
     if user:
         user_collection.update_one({"email": email}, {"$set": {"cart": cart_items}})
+
+@app.route("/remove_item", methods=["POST"])
+def remove_item():
+    if request.method == "POST":
+        # Get the item details from the request
+        item_to_remove = request.get_json().get("itemToRemove", {})
+
+        user_email = session.get("email")
+
+        # Update user cart in the database to remove the specified item
+        if user_email:
+            remove_item_from_cart(user_email, item_to_remove)
+            return jsonify({"message": "Item removed successfully"})
+
+    return jsonify({"error": "Invalid request"})
+
+def remove_item_from_cart(email, item_to_remove):
+    # Assuming you have a 'users' collection in your MongoDB
+    user_collection = mongo.db.users
+
+    # Update the user's cart in the database
+
+    user_collection.update_one(
+        {"email":email},
+        {"$pull":{"cart":item_to_remove}}
+    )
+
+
+     
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -143,6 +171,7 @@ def signup():
 # Endpoint to provide Products data as JSON
 @app.route("/api/products")
 def products():
+    products_data=[...]
     return jsonify(products_data)
 
 @app.route("/logout", methods=["POST"])
@@ -157,3 +186,5 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+
+

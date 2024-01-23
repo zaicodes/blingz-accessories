@@ -268,14 +268,14 @@ $(".checkoutbtn").click(function () {
     };
     cartItems.push(cartItem);
   });
+  // Cart items transferring to the database
   $.ajax({
     type: "POST",
     url: "/profile",
     contentType: "application/json; charset=utf-8",
-
     data: JSON.stringify({ cartItems: cartItems }),
     success: function (response) {
-      alert(response.message);
+      window.location.href = "/profile";
     },
     error: function (error) {
       console.error("Error updating cart:", error);
