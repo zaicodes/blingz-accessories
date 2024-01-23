@@ -1,7 +1,7 @@
 # whack-a-mole - Testing
 
-[Visit Live Site Here!]()
-[Main READ ME FILE Here]()
+[Visit Live Site Here!](https://blingz-bbae80235bc4.herokuapp.com/)
+[Main READ ME FILE Here](https://github.com/zaicodes/blingz-accessories)
 
 I continuously tested and debugged my project using Chrome developer tools, ensuring proper functionality and responsiveness across various devices. I also utilized Google developer tools to verify different elements and troubleshoot any issues, specifically assessing JavaScript code sections for intended performance.
 

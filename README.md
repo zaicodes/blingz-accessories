@@ -4,7 +4,7 @@
 
 ![Am-I-responsive](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/am-i-responsive.png)
 
-[Live link to website](https://zaicodes.github.io/blingz-accessories/)
+[Live link to website](https://blingz-bbae80235bc4.herokuapp.com/)
 
 ## Project Goals
 
