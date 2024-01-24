@@ -6,7 +6,7 @@
     <div class="sec1-home-flex">
       <div>
         <h2>Radiance That Reflects Your Inner Glow!</h2>
-        <a href="#" class="main-btn header-btn">See More</a>
+        <a href="./about" class="main-btn header-btn">See More</a>
         <br />
         <img
           class="sec-1-left-pic"
@@ -18,7 +18,6 @@
     </div>
   </div>
 </section>
-
 <!-- Section 2 / information 1-->
 <section class="section section2-home">
   <div class="container">
@@ -33,7 +32,6 @@
     </h2>
   </div>
 </section>
-
 <!-- Section 3 / Gategory -->
 <section class="section section3-home">
   <div class="container">
@@ -43,9 +41,8 @@
     </div>
   </div>
 </section>
-
-<!-- Section 5 / Information 2 -->
-<section class="section section5-home">
+<!-- Section 4 / Information 2 -->
+<section class="section section4-home">
   <div class="container">
     <h2 class="heading">
       What Makes Our Wide Range of Jewelry Options Worth Your Selection?
@@ -78,6 +75,85 @@
           boast timeless beauty and sustained brilliance for years to come.
         </p>
       </div>
+    </div>
+  </div>
+</section>
+<!-- Section 5 / Testimonials -->
+<section class="section section5-home" id="testimonials">
+  <h1 class="heading">Testimonials</h1>
+  <div class="swiper-container testimonials-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+          class="testimonial-img"
+          src="{{ url_for('static', filename='images/amy.webp')}}"
+        />
+        <p class="para">
+          The jewelry here is not just an accessory; it's an expression of art.
+          Each piece tells a story and adds a touch of glamour to every outfit.
+        </p>
+        <h2 class="testimonial-name">Amy John</h2>
+        <img
+          class="rating"
+          src="{{ url_for('static', filename='images/4-half-star-rating.png')}}"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          class="testimonial-img"
+          src="{{ url_for('static', filename='images/emily.webp')}}"
+        />
+        <p class="para">
+          Amazing value for such high-quality pieces. I've shopped from various
+          online jewelry stores, and this one stands out for its exceptional
+          designs.
+        </p>
+        <h2 class="testimonial-name">Emily Smith</h2>
+        <img
+          class="rating"
+          src="{{ url_for('static', filename='images/4-star-rating.png')}}"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          class="testimonial-img"
+          src="{{ url_for('static', filename='images/olivia.webp')}}"
+        />
+        <p class="para">
+          The attention to detail in each piece is incredible. I receive endless
+          compliments every time I wear something from this collection.
+        </p>
+        <h2 class="testimonial-name">Olivia Harris</h2>
+        <img
+          class="rating"
+          src="{{ url_for('static', filename='images/4-half-star-rating.png')}}"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          class="testimonial-img"
+          src="{{ url_for('static', filename='images/sophia.webp')}}"
+        />
+        <p class="para">
+          The user-friendly website made my shopping experience enjoyable. From
+          browsing to checkout, it was seamless, and the jewelry exceeded my
+          expectations.
+        </p>
+        <h2 class="testimonial-name">Sophia Davis</h2>
+        <img
+          class="rating"
+          src="{{ url_for('static', filename='images/4-half-star-rating.png')}}"
+        />
+      </div>
+      
+      <div class="swiper-slide">
+        <img class="testimonial-img" src="{{ url_for('static', filename='images/vanseena.webp')}}" />
+        <p class="para">The reviews don't lie! After purchasing from this site, I understand why there's so much praise. The jewelry is stunning, and I can't wait to recommend it to friends.</p>
+        <h2 class="testimonial-name">Vanseena Harrow</h2>
+        <img class="rating" src="{{ url_for('static', filename='images/4-half-star-rating.png')}}" />
+      </div>
+      </div>
+
     </div>
   </div>
 </section>
