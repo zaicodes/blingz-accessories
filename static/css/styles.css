@@ -18,7 +18,7 @@ html {
   font-size: 3.6rem;
   line-height: 1.8;
   text-align: center;
-  color: #fc6868;
+  color: #3b3b3b;
 }
 .secondary-heading {
   font-weight: 100;
@@ -401,6 +401,15 @@ ul {
   background-color: #ffe4e4;
 }
 
+.info-heading {
+  font-family: Prata, sans-serif;
+  font-weight: 400;
+  font-size: 3.6rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #fc6868;
+}
+
 /* Section 3  */
 
 .section3-home {
@@ -413,6 +422,15 @@ ul {
   background-blend-mode: color-burn;
   width: 100%;
   padding: 100px 0px;
+}
+
+.category-heading {
+  font-family: Prata, sans-serif;
+  font-weight: 400;
+  font-size: 3.6rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #fc6868;
 }
 
 .section3-home .secondary-heading {
