@@ -1,10 +1,10 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for, flash, session
 import os
 import json
+from bson import ObjectId 
 import secrets
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
-
 if os.path.exists("env.py"):
     import env
 
@@ -49,7 +49,6 @@ def login():
         email = request.form.get("email")
         password = request.form.get("password")
         existing_user = mongo.db.users.find_one({"email": email})
-        
         if existing_user and check_password_hash(existing_user["password"], password):
             flash("Login successful", "success")
             # Set the 'logged_in' session variable to True
@@ -62,6 +61,8 @@ def login():
     # Set the 'logged_in' session variable to False if login is not successful
     session["logged_in"] = False
     return redirect(url_for("index"))
+
+
 
 @app.route("/checkout", methods=["POST"])
 def checkout():
@@ -76,13 +77,18 @@ def checkout():
             return jsonify({"message": "Checkout successful"})
 
     return jsonify({"error": "Invalid request"})
-@app.route("/profile", methods=["GET", "POST"])
 
+@app.route("/profile", methods=["GET", "POST"])
 def profile():
     if request.method == "POST":
         if request.form.get("delete_profile"):
             # If delete_profile flag is present, delete the user
             delete_user()
+            return redirect(url_for("index"))
+        elif request.form.get("update_profile"):
+            # Update user information
+            update_user_information()
+            session.clear()
             return redirect(url_for("index"))
 
     # Retrieve the actual user data from the MongoDB database
@@ -94,6 +100,31 @@ def profile():
 
     return render_template("profile.html", user_data=user_data, cart_items_from_db=cart_items_from_db)
 
+def update_user_information():
+    # Get the updated information from the form
+    new_username = request.form.get("username")
+    new_email = request.form.get("emailprofile")
+    new_password = request.form.get("passwordprofile")
+
+    # Retrieve the actual user data from the MongoDB database
+    user_email = session.get("email")
+    user_data = mongo.db.users.find_one({"email": user_email})
+
+    # Update the user's information if provided in the form
+    if new_username:
+        user_data["username"] = new_username
+    if new_email:
+        user_data["email"] = new_email
+    if new_password:
+        hashed_password = generate_password_hash(new_password, method="pbkdf2:sha256")
+        user_data["password"] = hashed_password
+
+    # Update the user in the database
+    mongo.db.users.update_one({"email": user_email}, {"$set": user_data})
+
+
+    # Update the user in the database
+    mongo.db.users.update_one({"email": user_email}, {"$set": user_data})
 def update_user_cart(email , cart_items):
     # Assuming you have a 'users' collection in your MongoDB
     user_collection = mongo.db.users
@@ -103,7 +134,7 @@ def update_user_cart(email , cart_items):
     if user:
         user_collection.update_one({"email": email}, {"$set": {"cart": cart_items}})
 
-# Delete Profile
+# # Delete Profile
 def delete_user():
     # Assuming you have a 'users' collection in your MongoDB
     user_collection = mongo.db.users
