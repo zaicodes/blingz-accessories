@@ -66,15 +66,13 @@ def login():
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
     if request.method == "POST":
-        # Get the cart items from the request
-        cart_items = request.get_json().get("cartItems", [])
-
-        user_email = session.get("email")
-        user_data = mongo.db.users.find_one({"email": user_email})
-
-        # Update user cart in the database
-        if user_email:
-            update_user_cart(user_email, cart_items)
+        if request.form.get("delete_profile"):
+            # If delete_profile flag is present, delete the user
+            delete_user()
+            return redirect(url_for("index"))
+        else:
+            # Handle other form submissions (update profile)
+            handle_profile_update()
 
     # Retrieve the actual user data from the MongoDB database
     user_email = session.get("email")
@@ -93,6 +91,45 @@ def update_user_cart(email , cart_items):
     user  = user_collection.find_one({"email": email})
     if user:
         user_collection.update_one({"email": email}, {"$set": {"cart": cart_items}})
+
+# Delete Profile
+def delete_user():
+    # Assuming you have a 'users' collection in your MongoDB
+    user_collection = mongo.db.users
+
+    # Get the user's email from the session
+    user_email = session.get("email")
+
+    # Delete the user from the database
+    user_collection.delete_one({"email": user_email})
+
+    # Clear the session data
+    session.clear()
+# ...
+
+def handle_profile_update():
+    # Get the user's email from the session
+    user_email = session.get("email")
+
+    # Get the updated profile information from the form
+    updated_username = request.form.get("username")
+    updated_email = request.form.get("emailprofile")
+
+    # Validate and sanitize the input (add more validation as needed)
+
+    # Assuming you have a 'users' collection in your MongoDB
+    user_collection = mongo.db.users
+
+    # Update the user's profile information in the database
+    result = user_collection.update_one(
+        {"email": user_email},
+        {"$set": {"username": updated_username, "email": updated_email}}
+    )
+
+    if result.modified_count > 0:
+        flash("Profile updated successfully", "success")
+    else:
+        flash("Failed to update profile", "error")
 
 @app.route("/remove_item", methods=["POST"])
 def remove_item():
@@ -177,6 +214,30 @@ def logout():
     flash("Logout successful", "success")
     return redirect(url_for("index"))
 
+# Flask route for updating quantity
+@app.route("/update_quantity", methods=["POST"])
+def update_quantity():
+    if request.method == "POST":
+        data = request.get_json()
+        item_id = data.get("itemId")
+        new_quantity = int(data.get("updatedQuantity"))
+
+        user_email = session.get("email")
+        update_quantity_in_cart(user_email, item_id, new_quantity)
+
+        return jsonify({"message": "Quantity updated successfully"})
+
+    return jsonify({"error": "Invalid request"})
+
+def update_quantity_in_cart(email, item_id, new_quantity):
+    # Assuming you have a 'users' collection in your MongoDB
+    user_collection = mongo.db.users
+
+    # Update the user's cart in the database
+    user_collection.update_one(
+        {"email": email, "cart._id": ObjectId(item_id)},
+        {"$set": {"cart.$.quantity": new_quantity}}
+    )
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

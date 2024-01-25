@@ -13,7 +13,12 @@
       <div class="profile-content">
         <h2 class="username para">Hi {{user_data.username}}</h2>
         <img src="../static/images/profilepicture.png" alt="" />
-        <button class="main-btn order-btn">View my orders</button>
+       <button
+       class="main-btn deletebtnprofile"
+       onclick="confirmDeleteProfile()"
+       type="button">
+       Delete Profile
+       </button>
 
         <form id="logoutForm" action="{{ url_for('logout') }}" method="post">
           <button
@@ -27,7 +32,7 @@
         </form>
       </div>
       <div class="profile_setting">
-        <form method="post" action="">
+        <form class="form" method="post" action="">
           <label for="username" class="profile-label">Username:</label>
           <input type="text" id="username" name="username" required />
           <label for="email" class="profile-label">Email:</label>

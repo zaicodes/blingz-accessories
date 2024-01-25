@@ -333,6 +333,23 @@ function validatePassword() {
   }
 }
 
+// Logout functionality
+$(document).ready(function () {
+  $("#logoutBtn").click(function () {
+    $("#logoutForm").submit();
+  });
+});
+
+
+// Deleting profile from Database
+function confirmDeleteProfile() {
+  const confirmDelete = confirm("Are you sure you want to delete?");
+  if (confirmDelete) {
+  document.querySelector(".form").submit();
+  }
+  }
+
+// Toggle Login window
 user.addEventListener("click", () => {
   toggleLoginForm();
 });
