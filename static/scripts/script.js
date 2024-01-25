@@ -121,7 +121,7 @@ function addToCart(name, price, imgSrc) {
   } else {
     // Create a new cart item
     var cartItem = `
- <div class="cart-flex">
+ <div class="cart-flex" >
    <div>
      <img src="${imgSrc}" alt="${name}" />
    </div>
@@ -290,13 +290,37 @@ $(".checkoutbtn").click(function () {
   });
 });
 
-// Update button click event
 document.querySelectorAll(".update-btn-profile").forEach(function (btn) {
   btn.addEventListener("click", function () {
-    var updatedQuantity = document.querySelector(
-      ".profile-item-quantity"
-    ).value;
-    console.log(updatedQuantity);
+    // Find the closest ".item" parent of the clicked button
+    const item = btn.closest(".item");
+
+    // Find the ".profile-item-quantity" and ".productname" within the corresponding item
+    const profileItemQuantity = item.querySelector(".profile-item-quantity");
+    const productName = item.querySelector(".productname").innerText;
+
+    // Get the updated quantity
+    const updatedQuantity = profileItemQuantity.value;
+
+    // Send the updated quantity to the server
+    fetch("/update_quantity", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        itemName: productName,
+        updatedQuantity: updatedQuantity,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.message);
+        // You may want to update the UI or provide feedback to the user here
+      })
+      .catch((error) => {
+        console.error("Error updating quantity:", error);
+      });
   });
 });
 
@@ -359,9 +383,11 @@ function confirmDeleteProfile() {
 }
 
 // Toggle login
-user.addEventListener("click", () => {
-  toggleLoginForm();
-});
+if (user) {
+  user.addEventListener("click", () => {
+    toggleLoginForm();
+  });
+}
 
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
