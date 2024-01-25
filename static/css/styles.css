@@ -96,10 +96,16 @@ a {
   color: #3b3b3b;
   cursor: pointer;
 }
+.profile-logo {
+  color: black;
+  margin-right: 10px;
+}
 .user-logo {
+  font-size: 25px !important;
   cursor: pointer;
 }
-span {
+nav span {
+  font-size: 11px;
   background-color: #fc6868;
   position: absolute;
   color: white;
@@ -112,6 +118,9 @@ span {
   text-align: center;
   height: 20px;
   font-family: Jost, sans-serif;
+}
+nav i {
+  font-size: 25px !important;
 }
 
 /* Cart section */
@@ -451,7 +460,7 @@ ul {
 }
 .flex-wrap {
   text-align: center;
-  flex: 1 0 400px;
+  flex: 1 0 200px;
 }
 .flex-wrap img {
   max-width: 100px;
@@ -485,7 +494,7 @@ ul {
   overflow: hidden;
   border: 1px solid white;
   padding: 20px;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -514,7 +523,7 @@ ul {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-300%);
+    transform: translateX(-80%);
   }
 }
 

@@ -17,7 +17,7 @@
           <button
             name="delete_profile"
             value="delete_profile"
-            onclick="confirmDeleteProfile"
+            onclick="confirmDeleteProfile()"
             class="main-btn deletebtnprofile"
             type="submit"
           >
@@ -85,7 +85,6 @@
             >
               Update Profile
             </button>
-
           </div>
         </form>
       </div>
@@ -114,12 +113,13 @@
             class="profile-item-quantity"
             value="{{ cart_item.quantity }}"
           />
-          <button class="update-btn-profile">Update</button>
+          <button class="update-btn-profile main-btn">Update</button>
           <i
             class="fa-solid fa-trash removedatabasebtn"
             aria-label="Removing-button"
             title="Remove item"
           ></i>
+          <input type="hidden" class="productid" value="{{ cart_item._id }}" />
         </p>
         <p class="para productprice">Price : {{ cart_item.price }}</p>
       </div>

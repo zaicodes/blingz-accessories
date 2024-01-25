@@ -50,7 +50,6 @@ signInBtn.addEventListener("click", () => {
 
 // Contact form
 function sendMail() {
-  console.log("asdfskdlafbnsdkl");
   var params = {
     fromName: document.getElementById("fullname").value,
     emailId: document.getElementById("email_id").value,
@@ -59,13 +58,21 @@ function sendMail() {
 
   const value = document.getElementById("email_id").value;
   if (value.indexOf("@") === -1) {
-    alert("please enter the email");
+    alert("Please enter a valid email");
     return;
   } else {
     emailjs
       .send("service_vtkbahe", "template_47nej3m", params)
       .then(function (res) {
-        alert("Success ! " + res.status);
+        console.log("EmailJS Response:", res);
+        const emailsubmission = ` <p class="email_matching heading">Your email has been submitted</p>`;
+        document
+          .querySelector(".login-form")
+          .insertAdjacentHTML("afterbegin", emailsubmission);
+      })
+      .catch(function (error) {
+        console.error("EmailJS Error:", error);
+        alert("Error sending email. Please try again.");
       });
     document.getElementById("fullname").value = "";
     document.getElementById("email_id").value = "";
@@ -172,6 +179,7 @@ updateTotalPrice();
 function updateTotalPrice() {
   var total = 0;
   let totalQuantity = 0;
+
 
   // Iterate over each cart item
   $(".cart-flex").each(function () {
@@ -323,7 +331,6 @@ document.querySelectorAll(".update-btn-profile").forEach(function (btn) {
       });
   });
 });
-
 // remove the data from the database
 $(document).on("click", ".removedatabasebtn", function () {
   const cartItem = $(this).closest(".item");
