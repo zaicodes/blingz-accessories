@@ -4,6 +4,7 @@ import json
 import secrets
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
+
 if os.path.exists("env.py"):
     import env
 
@@ -62,17 +63,27 @@ def login():
     session["logged_in"] = False
     return redirect(url_for("index"))
 
+@app.route("/checkout", methods=["POST"])
+def checkout():
+    if request.method == "POST":
+        cart_items = request.json.get("cartItems", [])
 
+        user_email = session.get("email")
+
+        # Update the user's cart in the database with the new cart items
+        if user_email:
+            update_user_cart(user_email, cart_items)
+            return jsonify({"message": "Checkout successful"})
+
+    return jsonify({"error": "Invalid request"})
 @app.route("/profile", methods=["GET", "POST"])
+
 def profile():
     if request.method == "POST":
         if request.form.get("delete_profile"):
             # If delete_profile flag is present, delete the user
             delete_user()
             return redirect(url_for("index"))
-        else:
-            # Handle other form submissions (update profile)
-            handle_profile_update()
 
     # Retrieve the actual user data from the MongoDB database
     user_email = session.get("email")
@@ -105,31 +116,6 @@ def delete_user():
 
     # Clear the session data
     session.clear()
-# ...
-
-def handle_profile_update():
-    # Get the user's email from the session
-    user_email = session.get("email")
-
-    # Get the updated profile information from the form
-    updated_username = request.form.get("username")
-    updated_email = request.form.get("emailprofile")
-
-    # Validate and sanitize the input (add more validation as needed)
-
-    # Assuming you have a 'users' collection in your MongoDB
-    user_collection = mongo.db.users
-
-    # Update the user's profile information in the database
-    result = user_collection.update_one(
-        {"email": user_email},
-        {"$set": {"username": updated_username, "email": updated_email}}
-    )
-
-    if result.modified_count > 0:
-        flash("Profile updated successfully", "success")
-    else:
-        flash("Failed to update profile", "error")
 
 @app.route("/remove_item", methods=["POST"])
 def remove_item():

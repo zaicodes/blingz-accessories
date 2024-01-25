@@ -273,9 +273,10 @@ $(".checkoutbtn").click(function () {
 
     cartItems.push(cartItem);
   });
+  console.log(cartItems);
   $.ajax({
     type: "POST",
-    url: "/profile",
+    url: "/checkout",
     contentType: "application/json; charset=utf-8",
 
     data: JSON.stringify({ cartItems: cartItems }),
@@ -286,6 +287,16 @@ $(".checkoutbtn").click(function () {
     error: function (error) {
       console.error("Error updating cart:", error);
     },
+  });
+});
+
+// Update button click event
+document.querySelectorAll(".update-btn-profile").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var updatedQuantity = document.querySelector(
+      ".profile-item-quantity"
+    ).value;
+    console.log(updatedQuantity);
   });
 });
 
@@ -333,23 +344,21 @@ function validatePassword() {
   }
 }
 
-// Logout functionality
 $(document).ready(function () {
   $("#logoutBtn").click(function () {
     $("#logoutForm").submit();
   });
 });
 
-
-// Deleting profile from Database
+// Delete profile from the database
 function confirmDeleteProfile() {
   const confirmDelete = confirm("Are you sure you want to delete?");
   if (confirmDelete) {
-  document.querySelector(".form").submit();
+    document.querySelector(".form").submit();
   }
-  }
+}
 
-// Toggle Login window
+// Toggle login
 user.addEventListener("click", () => {
   toggleLoginForm();
 });

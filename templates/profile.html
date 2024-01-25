@@ -13,13 +13,13 @@
       <div class="profile-content">
         <h2 class="username para">Hi {{user_data.username}}</h2>
         <img src="../static/images/profilepicture.png" alt="" />
-       <button
-       class="main-btn deletebtnprofile"
-       onclick="confirmDeleteProfile()"
-       type="button">
-       Delete Profile
-       </button>
-
+        <button
+          class="main-btn deletebtnprofile"
+          onclick="confirmDeleteProfile()"
+          type="button"
+        >
+          delete profile
+        </button>
         <form id="logoutForm" action="{{ url_for('logout') }}" method="post">
           <button
             class="main-btn logout-btn"
@@ -32,18 +32,30 @@
         </form>
       </div>
       <div class="profile_setting">
-        <form class="form" method="post" action="">
+        <form class="form" method="post" action="{{ url_for('profile') }} ">
           <label for="username" class="profile-label">Username:</label>
-          <input type="text" id="username" name="username" required />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            value="{{user_data.username}}"
+          />
           <label for="email" class="profile-label">Email:</label>
-          <input type="email" id="email-profile" name="emailprofile" required />
+          <input
+            type="email"
+            id="email-profile"
+            value="{{user_data.email}}"
+            name="emailprofile"
+            required
+          />
 
           <label for="password" class="profile-label">Password:</label>
           <input
             type="password"
             minlength="6"
             maxlength="15"
-            id="passwordprofile"
+            id="passwordprofile password"
             name="passwordprofile"
             required
           />
@@ -55,7 +67,7 @@
             type="password"
             minlength="6"
             maxlength="15"
-            id="confirm_passwordprofile"
+            id="confirm_passwordprofile confirm_password"
             name="confirm_passwordprofile"
             required
           />
@@ -68,13 +80,9 @@
             >
               update profile
             </button>
-            <button
-              type="submit"
-              value="submit"
-              class="main-btn deletebtnprofile"
-            >
-              delete profile
-            </button>
+
+            <!-- Hidden input field to indicate profile deletion -->
+            <input type="hidden" name="delete_profile" value="1" />
           </div>
         </form>
       </div>
@@ -103,7 +111,7 @@
             class="profile-item-quantity"
             value="{{ cart_item.quantity }}"
           />
-          <button class="main-btn update-btn">update</button>
+          <button class="update-btn-profile">Update</button>
           <i
             class="fa-solid fa-trash removedatabasebtn"
             aria-label="Removing-button"
@@ -117,11 +125,4 @@
   </div>
 </section>
 
-<script>
-  $(document).ready(function () {
-    $("#logoutBtn").click(function () {
-      $("#logoutForm").submit();
-    });
-  });
-</script>
 {% endblock %}
