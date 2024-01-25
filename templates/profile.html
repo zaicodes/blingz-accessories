@@ -13,13 +13,17 @@
       <div class="profile-content">
         <h2 class="username para">Hi {{user_data.username}}</h2>
         <img src="../static/images/profilepicture.png" alt="" />
-        <button
-          class="main-btn deletebtnprofile"
-          onclick="confirmDeleteProfile()"
-          type="button"
-        >
-          delete profile
-        </button>
+        <form class="form" method="post" action="{{ url_for('profile') }} ">
+          <button
+            name="delete_profile"
+            value="delete_profile"
+            onclick="confirmDeleteProfile"
+            class="main-btn deletebtnprofile"
+            type="submit"
+          >
+            delete profile
+          </button>
+        </form>
         <form id="logoutForm" action="{{ url_for('logout') }}" method="post">
           <button
             class="main-btn logout-btn"
@@ -82,8 +86,6 @@
               Update Profile
             </button>
 
-            <!-- Hidden input field to indicate profile deletion -->
-            <!-- <input type="hidden" name="delete_profile" value="1" /> -->
           </div>
         </form>
       </div>
