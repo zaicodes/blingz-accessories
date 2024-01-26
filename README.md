@@ -63,6 +63,7 @@ The project utilizes the following Google Fonts: with
 ### Images
 
 I used Midjourney to create pictures of models wearing jewelry and to generate photos of jewelry products for the shop page.
+For the logo design I used Canva to design the logo of the website.
 
 ## Features
 
@@ -135,6 +136,9 @@ In the future, if I have some time, I plan to add these features.
 - img2go.com - to resize images to any size.
 - Coolors - to generate colour palette for the website
 - Google fonts - to get typography with free, customizable fonts.
+- Canva - to design the logo.
+- Midjourney - to create all the photos used across the website.
+- Heroku - for hosting and deployment.
 
 ### Databases and API
 
@@ -201,6 +205,7 @@ To clone the repository:
 
 - Midjourney was used to generate images used in the website.
 - The icons are from Font Awesome.
+- Canva was used to design the website's logo
 
 ### Acknowledgements
 
