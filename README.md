@@ -134,6 +134,8 @@ Contact page:
 
 - Additionally, the contact page contains a map to help the user access and find the location.
 
+I've implemented defensive programming in my application to prevent checkout process by users who are not logged in or haven't created a profile. This involves verifying the presence of a user session and ensuring that the session user matches the one who created the profile and cart. If a user is not logged in, a message will be shown on the login window, prompting them to log in before proceeding to checkout.
+Additionally, the checkout button is not accessible if the user isn't logged in.
 
 ### Features left to implement
 
@@ -188,6 +190,48 @@ To view testing click [here](https://github.com/zaicodes/blingz-accessories/blob
 ## Deployment & Local Development
 
 ### Deployment
+
+
+The website is deployed using Heroku. To initiate the deployment on Heroku, you need to create two essential files: a requirements.txt file and a Procfile.
+
+The requirements.txt file enumerates all the necessary applications and dependencies required for running the app. Generate the requirements.txt file by executing the following command in the terminal:
+
+    ```bash
+    pip3 freeze --local > requirements.txt
+    ```
+
+The Procfile informs Heroku about which files run the app and how to execute it. Create the Procfile using the following command in the terminal:
+
+    ```bash
+    echo web: python app.py > Procfile
+    ```
+
+Note: The Procfile uses a capital P and lacks a file extension.
+
+Ensure the Procfile has the Heroku logo next to it after creation. Additionally, check the contents of the Procfile, as a blank line may be inadvertently added at the end during creation. This extra line can potentially cause issues during deployment, so delete it if present and save the file. Save both files, then add, commit, and push them to GitHub.
+
+Next, log in (or sign up) to Heroku.com. Click on the "New" button and then select "Create New App."
+
+Provide a unique name for your app (as names must be unique) and select a region. Once done, click "Create App."
+
+Connect the Heroku app to the GitHub repository for the site. Under the deployment section, choose GitHub, locate the correct repository for the project, and click "Connect."
+
+Once the repository is connected, you need to supply Heroku with the necessary config variables to build the app. Navigate to the "Settings" tab, and click the "Reveal Config Vars" button. Add the environment key/value variables used in the env.py file:
+
+    | KEY | VALUE |
+    | :-- | :-- |
+    | IP | 0.0.0.0 |
+    | PORT | 5000 |
+    | SECRET_KEY| YOUR_SECRET_KEY* |
+    | MONGO_URI | MONGO_URI* |
+    | MONGO_DBNAME | MONGO_DB* |
+
+
+*Denotes values specific to your app.
+
+Note that the debug is set to true for detecting bugs on the live site; remember to change it to FALSE after deployment.
+
+Finally, enable automatic deploys and click the "Create" button. Heroku will commence building the app.
 
 ### Local Development
 
