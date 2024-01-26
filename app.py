@@ -266,25 +266,26 @@ def logout():
 def update_quantity():
     if request.method == "POST":
         data = request.get_json()
-        item_id = data.get("itemId")
+        item_name = data.get("itemName")  # Change the key to match the frontend
         new_quantity = int(data.get("updatedQuantity"))
 
         user_email = session.get("email")
-        update_quantity_in_cart(user_email, item_id, new_quantity)
+        update_quantity_in_cart(user_email, item_name, new_quantity)
 
         return jsonify({"message": "Quantity updated successfully"})
 
     return jsonify({"error": "Invalid request"})
 
-def update_quantity_in_cart(email, item_id, new_quantity):
+def update_quantity_in_cart(email, item_name, new_quantity):
     # Assuming you have a 'users' collection in your MongoDB
     user_collection = mongo.db.users
 
     # Update the user's cart in the database
     user_collection.update_one(
-        {"email": email, "cart._id": ObjectId(item_id)},
+        {"email": email, "cart.name": item_name},
         {"$set": {"cart.$.quantity": new_quantity}}
     )
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -180,7 +180,6 @@ function updateTotalPrice() {
   var total = 0;
   let totalQuantity = 0;
 
-
   // Iterate over each cart item
   $(".cart-flex").each(function () {
     var quantity = parseFloat($(this).find(".quantity-input").val());
@@ -305,7 +304,7 @@ document.querySelectorAll(".update-btn-profile").forEach(function (btn) {
 
     // Find the ".profile-item-quantity" and ".productname" within the corresponding item
     const profileItemQuantity = item.querySelector(".profile-item-quantity");
-    const productName = item.querySelector(".productname").innerText;
+    const productName = item.querySelector(".productname").innerText.trim(); // Trim whitespace
 
     // Get the updated quantity
     const updatedQuantity = profileItemQuantity.value;
