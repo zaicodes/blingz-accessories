@@ -14,7 +14,8 @@ With a responsive design, Blingz provides a consistent and enjoyable browsing ex
 
 ### Target Audience
 
-Blingz targets fashion-forward individuals with a passion for jewellery. This audience, keen on curated and elegant pieces, values user-friendly features like detailed descriptions, ratings, effortless cart management, and personalized profiles for quick checkouts. They actively participate by freely rating items and leaving reviews, contributing to a vibrant community within the brand.
+Blingz targets fashion-forward individuals with a passion for jewellery. 
+This audience, keen on curated and elegant pieces, values user-friendly features like detailed descriptions, effortless cart management, and personalized profiles for quick checkouts. 
 
 ## User Experience (UX)
 
@@ -22,34 +23,23 @@ Blingz targets fashion-forward individuals with a passion for jewellery. This au
 
 As a first-time visitor, I want to:
 
-- Easily navigate through the website to find a specific category of jewellery.
-- Have a user-friendly search functionality to quickly find a specific piece or type of jewellery.
-- Filter search results based on criteria like material, price range, and gemstone.
-- Responsive to different screen sizes
+- Easily navigate through the website which is responsive to different screen sizes.
 - See clear and detailed product pages with high-quality images, pricing, and product descriptions.
-- Easily create a user account to track my orders and save favourite items.
-- Read reviews and ratings from other customers to make informed purchasing decisions ((MAYBE)).
+- Easily create a user account to track my orders.
+- Read reviews and ratings from other customers to make informed purchasing decisions.
 
 As a returning user, I want to:
 
 - Log in quickly and securely using my existing credentials.
-- Ability to delete the account.
-- Save items to my Wishlist for future consideration or purchase
 - Effortlessly add items to my shopping cart for a seamless shopping experience.
 - Have the ability to update the cart, adjust quantities, and remove items before proceeding to checkout.
-- Change my password and username easily from the account settings page ((MAYBE)).
-- Retrieve my password securely in case I forget it, through a straightforward password recovery process ((MAYBE)).
-- Easily transfer items from my cart to my wishlist for future consideration ((MAYBE)).
+
 
 As a frequent user, I want to:
 
-- Save items to my Wishlist for future consideration or purchase.
 - Have multiple ways for contacting customer support, including a contact form for written queries and find and utilize contact information, such as phone numbers and email addresses, for more urgent inquiries.
-- Connect with the brand on various social media platforms to stay informed about events, promotions, and community updates.
-- Provide feedback on items by rating them⭐ and leaving detailed reviews.
-- Access quick-sharing buttons on each product page for seamless sharing, and share my favourite jewellery items with friends and family through various social media platforms, including WhatsApp ((MAYBE)).
-- Stay updated on the latest trends, styling tips, and jewellery insights by easily accessing the blog section for the newest posts ((MAYBE)).
-- Engage with the community by commenting on blog posts and sharing my thoughts with other users ((MAYBE)).
+- Change my password and username easily from the account settings page.
+- Ability to delete the profile account.
 
 ## Design
 
