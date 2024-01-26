@@ -54,6 +54,10 @@
   width: 100%;
 }
 .section-map iframe {
-  margin: 100px 0px 0px;
+  margin: 50px 0px 0px;
   width: 100%;
+}
+
+.find-us {
+  margin-top: 30px;
 }

@@ -45,6 +45,7 @@
       href="{{ url_for('static', filename='images/android-chrome-192x192.png')}}"
       type="image/x-icon"
     />
+
     <!-- Title  -->
     <title>Blingz Accessories</title>
   </head>
@@ -69,13 +70,13 @@
             <a href="/profile">
               <i
                 class="fa fa-3x fa-user profile-logo"
-                aria-label="User profile"
+                aria-label="User profile-logo"
                 aria-hidden="true"
               ></i
             ></a>
             {% else %}
             <i
-              class="fa fa-3x fa-user user-logo"
+              class="fa-regular fa-3x fa-user user-logo"
               aria-label="User signin"
               aria-hidden="true"
             ></i>
@@ -88,10 +89,9 @@
               ></i>
               <span>0</span>
             </div>
-            <a href="./shop" class="main-btn">shop now</a>
+            <a href="./shop" class="main-btn shop_now">shop now</a>
+            <div class="menu"><i class="fa-solid fa-2x fa-bars"></i></div>
           </div>
-
-          <div class="menu"><i class="fa-solid fa-2x fa-bars"></i></div>
         </div>
       </nav>
     </header>
@@ -222,6 +222,7 @@
     </footer>
   </body>
   <!-- Javascript  -->
+
   <script>
     function Login() {
       const email = $("#login-email").val();
@@ -242,6 +243,7 @@
       });
     }
   </script>
+
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="{{ url_for('static', filename='scripts/script.js')}}"></script>
 </html>
