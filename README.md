@@ -72,20 +72,19 @@ Home page:
 
 - Homepage with a brief introduction of the brand, showcasing some products in a grid format. Each product has an image, title, and button to explore more.
 - section that consists of customer ratings and reviews.
-- product filter feature, allowing customers to narrow down their search by category or price range.
-- Product page that displays detailed product information, including additional images, reviews, customer ratings, and related items.
+- few sections that provide information to the user/customer.
 
 Shop page:
 
 - Display a comprehensive shop section featuring a list of jewellery items.
 - Include essential details such as item descriptions, prices, and ratings for each product.
 - Allow users to add products to their virtual shopping cart before purchasing them.
-- Wishlist: Provide an option for users to save/favourite items they like so they can easily access them later on.
 
 User Accounts:
 
 - Provide users with the option to create a personal account on the website and update their details.
 - Allow registered users to log in securely to access personalized features.
+- Ability for the user to delete their profile.
 
 Shopping Cart Management:
 
@@ -93,17 +92,17 @@ Shopping Cart Management:
 - Allow users to view the contents of their cart, review item details, and see the total cost.
 - Implement the ability to adjust and update the quantity of items in the cart. Provide an option to delete unwanted items from the shopping cart.
 
-Rating and Reviews:
-
-- Allow users to rate individual jewellery items based on their preferences.
-- Implement a review system, enabling users to leave detailed reviews and comments under each product.
-
 Contact page:
 
 - Multiple ways for contacting customer support, including a contact form for written queries.
 - Key contact information, such as phone numbers and email addresses, for more urgent enquiries.
 
 ### Features left to implement
+
+In the future, if I have some time, I plan to add these features.
+- product filter feature, allowing customers to narrow down their search by category or price range.
+- Allow users to rate individual jewellery items based on their preferences.
+- Implement a review system, enabling users to leave detailed reviews and comments under each product.
 
 ## Accessibility
 
@@ -118,8 +117,8 @@ Contact page:
 
 - HTML5 - to create the structure of the site.
 - CSS3 - to add styling to the site.
-- JavaScript - to add functionality.
-- Python - for backend development.
+- JavaScript + JQuery - to add functionality.
+- Python with flask - for backend development.
 
 ### Libraries, frameworks and other useful websites:
 
@@ -139,17 +138,7 @@ Contact page:
 
 ### Databases and API
 
-The project has database and APIs used:
-
-- MongoDB
--
-
-### Testing:
-
-- Chrome DevTools used for testing and debugging during development.
-- W3C Markup Validation employed for HTML code testing.
-- W3C CSS Validation Service utilized for CSS code testing.
-- Jshint for testing Javascript code.
+The project has database API as well as curd functionality been implemented through MongoDB:
 
 ## Testing
 
