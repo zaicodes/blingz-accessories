@@ -5,11 +5,14 @@ from bson import ObjectId
 import secrets
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
+
+# Load environment variables from .env file if it exists
 if os.path.exists("env.py"):
     import env
 
-
 app = Flask(__name__)
+
+# Set MongoDB database name, URI, and secret key from environment variables
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -22,6 +25,10 @@ except Exception as e:
 
 @app.route("/")
 def index():
+    """
+    Render the index.html template with the existing user data 
+    if the user is logged in.
+    """
     existing_user = None
     if session.get("logged_in"):
         email = session.get("email")
@@ -38,6 +45,9 @@ def contact():
 
 @app.route("/shop")
 def shop():
+    """
+    Render the shop.html template with the company data from the products.json file.
+    """
     data = []
     with open("data/products.json", "r") as json_data:
         data = json.load(json_data)
@@ -45,6 +55,12 @@ def shop():
 
 @app.route("/login", methods=["POST"])
 def login():
+    """
+    Handle user login by checking the provided email and password.
+    If the login is successful, set the 'logged_in' session variable 
+    to True and store the email in the session.
+    Redirect the user to the profile page.
+    """
     if request.method == "POST":
         email = request.form.get("email")
         password = request.form.get("password")
@@ -62,10 +78,12 @@ def login():
     session["logged_in"] = False
     return redirect(url_for("index"))
 
-
-
 @app.route("/checkout", methods=["POST"])
 def checkout():
+    """
+    Handle user checkout by updating the user's cart in the database 
+    with the new cart items.
+    """
     if request.method == "POST":
         cart_items = request.json.get("cartItems", [])
 
@@ -77,8 +95,15 @@ def checkout():
             return jsonify({"message": "Checkout successful"})
 
     return jsonify({"error": "Invalid request"})
+
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
+    """
+    Handle user profile page requests.
+    If the request method is POST, check for delete_profile 
+    or update_profile flags and act accordingly.
+    Render the profile.html template with the user data and cart items.
+    """
     if request.method == "POST":
         if request.form.get("delete_profile"):
             # If delete_profile flag is present, delete the user
@@ -97,7 +122,8 @@ def profile():
     # Fetch cart items from the user's data
     cart_items_from_db = user_data.get("cart", [])
 
-    return render_template("profile.html", user_data=user_data, cart_items_from_db=cart_items_from_db)
+    return render_template("profile.html", user_data=user_data, 
+                           cart_items_from_db=cart_items_from_db)
 
 def update_user_information():
     # Get the updated information from the form
@@ -124,8 +150,12 @@ def update_user_information():
 
     # Update the user in the database
     mongo.db.users.update_one({"email": user_email}, {"$set": user_data})
+    
 def update_user_cart(email , cart_items):
-    # Assuming you have a 'users' collection in your MongoDB
+    """ 
+    Assuming you have a 'users' collection in your MongoDB,
+    Update the user's cart in the database.
+    """
     user_collection = mongo.db.users
 
     # Find the user by email
@@ -215,7 +245,8 @@ def signup():
             flash("Error accessing or inserting user into MongoDB", "error")
             return render_template("signup.html", username_exists=username_exists)
 
-    return render_template("signup.html", username_exists=username_exists, success_exists=success_exists)
+    return render_template("signup.html", username_exists=username_exists, 
+                           success_exists=success_exists)
 
 # Endpoint to provide Products data as JSON
 @app.route("/api/products")
@@ -235,23 +266,23 @@ def logout():
 def update_quantity():
     if request.method == "POST":
         data = request.get_json()
-        item_name = data.get("itemName")  # Use "itemName" instead of "itemId"
+        item_id = data.get("itemId")
         new_quantity = int(data.get("updatedQuantity"))
 
         user_email = session.get("email")
-        update_quantity_in_cart(user_email, item_name, new_quantity)
+        update_quantity_in_cart(user_email, item_id, new_quantity)
 
         return jsonify({"message": "Quantity updated successfully"})
 
     return jsonify({"error": "Invalid request"})
 
-def update_quantity_in_cart(email, item_name, new_quantity):
+def update_quantity_in_cart(email, item_id, new_quantity):
     # Assuming you have a 'users' collection in your MongoDB
     user_collection = mongo.db.users
 
-    # Update the user's cart in the database using item name
+    # Update the user's cart in the database
     user_collection.update_one(
-        {"email": email, "cart.name": item_name},  # Update query to use "cart.name"
+        {"email": email, "cart._id": ObjectId(item_id)},
         {"$set": {"cart.$.quantity": new_quantity}}
     )
 
