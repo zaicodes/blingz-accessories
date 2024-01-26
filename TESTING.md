@@ -99,6 +99,7 @@ The CSS Validator Jigsaw was used to validate all the CSS files. There were no e
 [JSLint](http://www.jslint.com/) was used to check for any errors in JavaScript code. There were none found.
 
 ### Lighthouse
+
 Google's Lighthouse tool was used to test performance, accessibility, SEO,
 and PWA aspects of the site. The results are as follow:
 
@@ -106,14 +107,20 @@ and PWA aspects of the site. The results are as follow:
 
 ![About.html](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/testing/about.png)
 
-![Shop.html]()
-
-![Contact.html]()
+![Contact.html](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/testing/contact.png)
 
 ![Signup.html](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/testing/signup.png)
 
-![Profile.html]()
+![Profile.html](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/testing/profile.png)
 
+![Shop.html](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/testing/about.png)
+
+
+Issues found on Lighthouse:
+
+- The contrast ratio between the background and foreground colours is inadequate, particularly with the dark pink text on a white page. This was ignored as these colours were part of colour palette for this project.
+
+- Another concern was that the link tags lacked a distinguishable name. Despite adding "aria-label" to address this, the profile icon in the navbar also has "aria-hidden='true'." This adjustment is necessary to accommodate variations in the icon appearance for users who are logged in versus those who are not logged in.
 
 ## Bugs discovered
 
