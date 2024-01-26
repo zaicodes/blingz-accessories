@@ -71,11 +71,24 @@ For the logo design I used Canva to design the logo of the website.
 
 Home page:
 
+![navbar](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/navbar.png)
+The navbar looks the same on every page. It has links to different parts of the website, icons for the cart and profile, and a button to take the user to the shop.
+
+![landing](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/landing.png)
+
 - Homepage with a brief introduction of the brand, showcasing some products in a grid format. Each product has an image, title, and button to explore more.
+
+![testimonials](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/testimonials.png)
+
 - section that consists of customer ratings and reviews.
+
+![information](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/information.png)
+
 - few sections that provide information to the user/customer.
 
 Shop page:
+
+![shop](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/shop.png)
 
 - Display a comprehensive shop section featuring a list of jewellery items.
 - Include essential details such as item descriptions, prices, and ratings for each product.
@@ -83,20 +96,44 @@ Shop page:
 
 User Accounts:
 
+![signup](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/signup.png)
+
 - Provide users with the option to create a personal account on the website and update their details.
+
+![login](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/login.png)
+
 - Allow registered users to log in securely to access personalized features.
-- Ability for the user to delete their profile.
+
+![profile](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/profile.png)
+
+- Ability for the user to logout, update and delete their profile.
 
 Shopping Cart Management:
+
+![cart](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/cart.png)
 
 - Enable users to add items to their shopping cart for a convenient shopping experience.
 - Allow users to view the contents of their cart, review item details, and see the total cost.
 - Implement the ability to adjust and update the quantity of items in the cart. Provide an option to delete unwanted items from the shopping cart.
 
+![order history](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/orderhistory.png)
+
+- Ability to checkout and view order history on profile. 
+
 Contact page:
 
-- Multiple ways for contacting customer support, including a contact form for written queries.
+![contact details](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/contactdetails.png)
+
 - Key contact information, such as phone numbers and email addresses, for more urgent enquiries.
+
+![form](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/form.png)
+
+- Ability for the customer to send a message directly using the contact form. This form is implemented using EmailJS.
+
+![map](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/features/map.png)
+
+- Additionally, the contact page contains a map to help the user access and find the location.
+
 
 ### Features left to implement
 
