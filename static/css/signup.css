@@ -31,7 +31,7 @@
 }
 
 .section-1-signup input {
-  width: 80%;
+  width: 100%;
   border: none;
   font-size: 18px;
   padding: 15px 10px;
@@ -44,10 +44,11 @@
   margin: 20px 0px;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 
 .signup-label {
-  color: #3b3b3b;
+  color: #efefef;
   margin: 0.3px 0px;
   text-align: left;
   font-family: Jost, sans-serif;

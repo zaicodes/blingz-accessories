@@ -534,6 +534,14 @@ footer a {
   font-size: 18px;
   font-family: Jost, sans-serif;
 }
+.footer-col-3 li {
+  color: #3b3b3b;
+  line-height: 2.3;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: Jost, sans-serif;
+}
+
 footer a:hover {
   color: #fc6868;
 }

@@ -22,6 +22,26 @@ showCartBtns.forEach(function (e) {
   });
 });
 
+// login functionlaity
+function Login() {
+  const email = $("#login-email").val();
+  const password = $("#login-password").val();
+
+  $.ajax({
+    type: "POST",
+    url: "/login", //update the endpoint based on flask
+    data: { email: email, password: password },
+    success: function (response) {
+      //handle the response from the server
+      console.log(response);
+    },
+    error: function (error) {
+      //handle errors
+      console.log(error);
+    },
+  });
+}
+
 // For hiding the cart
 const hideCartMain = function () {
   cartMain.classList.remove("wrapper");
@@ -363,8 +383,8 @@ $(document).ready(function () {
 });
 
 // Confirming password for signup
-const password = document.getElementById("password"),
-  confirm_password = document.getElementById("confirm_password");
+const password = document.querySelectorAll("password"),
+  confirm_password = document.querySelectorAll("confirm_password");
 
 function validatePassword() {
   if (password.value != confirm_password.value) {
@@ -389,6 +409,7 @@ function confirmDeleteProfile() {
 }
 
 // Toggle login
+
 if (user) {
   user.addEventListener("click", () => {
     toggleLoginForm();

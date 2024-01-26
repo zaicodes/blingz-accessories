@@ -192,25 +192,16 @@
             <h2 class="small-heading footer-heading">Need help?</h2>
             <ul>
               <li>
-                <a href=""
-                  ><i class="fa-solid fa-id-card" style="color: #fc6868"></i>
-                  07123456789</a
-                >
+                <i class="fa-solid fa-id-card" style="color: #fc6868"></i>
+                07123456789
               </li>
               <li>
-                <a href="">
-                  <i class="fa-solid fa-envelope" style="color: #fc6868"></i
-                  >blingz@emailexample.com</a
-                >
+                <i class="fa-solid fa-envelope" style="color: #fc6868"></i
+                >blingz@emailexample.com
               </li>
               <li>
-                <a href="">
-                  <i
-                    class="fa-solid fa-location-dot"
-                    style="color: #fc6868"
-                  ></i>
-                  98 Ploughley Rd, London, NW9 001</a
-                >
+                <i class="fa-solid fa-location-dot" style="color: #fc6868"></i>
+                98 Ploughley Rd, London, NW9 001
               </li>
             </ul>
           </div>
@@ -219,27 +210,6 @@
     </footer>
   </body>
   <!-- Javascript  -->
-
-  <script>
-    function Login() {
-      const email = $("#login-email").val();
-      const password = $("#login-password").val();
-
-      $.ajax({
-        type: "POST",
-        url: "/login", //update the endpoint based on flask
-        data: { email: email, password: password },
-        success: function (response) {
-          //handle the response from the server
-          console.log(response);
-        },
-        error: function (error) {
-          //handle errors
-          console.log(error);
-        },
-      });
-    }
-  </script>
 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="{{ url_for('static', filename='scripts/script.js')}}"></script>
