@@ -48,7 +48,7 @@ html {
 
 nav {
   height: 20vh;
-  overflow: none;
+  overflow: hidden;
   background-color: white;
 }
 .container {
@@ -68,7 +68,7 @@ nav {
   align-items: center;
 }
 nav img {
-  width: 150px;
+  width: 120px;
 }
 .nav-links a {
   text-transform: uppercase;
