@@ -183,7 +183,13 @@ In the future, if I have some time, I plan to add these features.
 
 ### Databases and API
 
-The project has database API as well as curd functionality been implemented through MongoDB:
+The project has self-created data API as well as curd functionality been implemented through MongoDB:
+
+- I generated a dataset using a JSON file to establish the shop, a strategy employed to steer clear of hard-coding the entire store. 
+
+- Additionally, I integrated MongoDB by connecting it through MongoDB Compass, enabling me to monitor the feedback for each stored, deleted, or updated data.
+
+- Upon user signup process, their details such as username, email, and password are stored. Subsequently, when the user initiates a checkout, the acquired items are recorded in their order history, which is stored in the database under their respective user profile.
 
 ## Testing
 
