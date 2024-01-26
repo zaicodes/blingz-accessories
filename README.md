@@ -283,8 +283,6 @@ To clone the repository:
 
 ## Credits
 
-### Code
-
 ### Content
 
 - The website's textual content has been written by me.

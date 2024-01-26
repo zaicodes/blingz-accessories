@@ -111,7 +111,9 @@
           ></i>
           <input type="hidden" class="productid" value="{{ cart_item._id }}" />
         </p>
-        <p class="para productprice">Price : {{ cart_item.price }}</p>
+        <p class="para productprice">
+          Price :{{ cart_item.quantity * cart_item.price }}
+        </p>
       </div>
       {% endfor %}
     </div>
