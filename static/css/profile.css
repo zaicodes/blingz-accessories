@@ -9,7 +9,7 @@
 .section-3-profile .main-grid {
   margin: 50px 0px;
   display: grid;
-  gap: 140px;
+  gap: 100px;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .username {
