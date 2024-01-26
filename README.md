@@ -134,6 +134,8 @@ Contact page:
 
 - Additionally, the contact page contains a map to help the user access and find the location.
 
+
+- Defensive programming:
 I've implemented defensive programming in my application to prevent checkout process by users who are not logged in or haven't created a profile. This involves verifying the presence of a user session and ensuring that the session user matches the one who created the profile and cart. If a user is not logged in, a message will be shown on the login window, prompting them to log in before proceeding to checkout.
 Additionally, the checkout button is not accessible if the user isn't logged in.
 
