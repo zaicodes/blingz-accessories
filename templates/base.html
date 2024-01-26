@@ -119,9 +119,15 @@
           <div>Sub-total :</div>
           <div>0</div>
         </div>
+        {% if session.logged_in %}
         <div class="checkoutbtn hidden" title="Proceed to Checkout">
           Continue to Checkout
         </div>
+        {% else %}
+        <div class="plzbtn" title="Proceed to Checkout">
+          Continue to Checkout
+        </div>
+        {% endif %}
       </div>
     </main>
 

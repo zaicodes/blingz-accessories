@@ -101,6 +101,7 @@ a {
   color: black;
   margin-right: 10px;
 }
+
 .user-logo {
   font-size: 25px !important;
   cursor: pointer;
@@ -245,6 +246,15 @@ nav i {
   background-color: #fc6868;
   color: white;
   cursor: pointer;
+  transition: 0.2s ease-in;
+}
+.plzbtn {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  background-color: #fc6868;
+  color: white;
   transition: 0.2s ease-in;
 }
 
