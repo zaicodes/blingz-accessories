@@ -1,6 +1,7 @@
 # whack-a-mole - Testing
 
 [Visit Live Site Here!](https://blingz-bbae80235bc4.herokuapp.com/)
+
 [Main READ ME FILE Here](https://github.com/zaicodes/blingz-accessories)
 
 I continuously tested and debugged my project using Chrome developer tools, ensuring proper functionality and responsiveness across various devices. I also utilized Google developer tools to verify different elements and troubleshoot any issues, specifically assessing JavaScript code sections for intended performance.
@@ -84,12 +85,14 @@ I used [W3C](https://validator.w3.org/) to validate both the HTML and CSS on all
 - HTML W3C Validator
 Regarding the HTML Validator, it flagged information messages about trailing slashes on void elements, a result of the automatically added /> close tag by Prettier. 
 Manual removal will be addressed in the next file save to rectify this issue.
+it also flagged the flask related codes which was ignored.
+other than that, there were no errors found.
 
 ![index.html]()
 
 - CSS Validator (JigSaw)
 The CSS Validator Jigsaw was used to validate all the CSS files. There were no errors found.
-![style.css]()
+![style.css](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/testing/jigsaw.png)
 
 ### JavaScript Validator
 
@@ -99,15 +102,15 @@ The CSS Validator Jigsaw was used to validate all the CSS files. There were no e
 Google's Lighthouse tool was used to test performance, accessibility, SEO,
 and PWA aspects of the site. The results are as follow:
 
-![Index.html]()
+![Index.html](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/testing/index.png)
 
-![About.html]()
+![About.html](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/testing/about.png)
 
 ![Shop.html]()
 
 ![Contact.html]()
 
-![Signup.html]()
+![Signup.html](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/testing/signup.png)
 
 ![Profile.html]()
 
