@@ -47,6 +47,8 @@ html {
 /* Navbar */
 
 nav {
+  height: 20vh;
+  overflow: none;
   background-color: white;
 }
 .container {
@@ -67,7 +69,6 @@ nav {
 }
 nav img {
   width: 150px;
-  height: 100px;
 }
 .nav-links a {
   text-transform: uppercase;
@@ -160,11 +161,11 @@ nav i {
 }
 
 .cart-heading {
+  text-align: center;
   font-family: Prata, sans-serif;
   font-weight: 400;
   font-size: 3.6rem;
   line-height: 1.8;
-  text-align: left;
   margin-top: 30px;
   color: #fc6868;
 }
@@ -387,8 +388,8 @@ ul {
 }
 
 .sec-1-left-pic {
-  width: 400px;
-  height: 300px;
+  width: 50%;
+  /* height: 300px; */
 }
 .sec1-home-flex {
   display: flex;
@@ -556,11 +557,11 @@ footer h2 {
   text-align: left;
 }
 footer .para {
-  margin-top: -60px;
+  margin-top: -30px;
   max-width: 300px;
 }
 .footer-col-1 img {
-  max-width: 200px;
+  width: 150px;
   margin-top: -50px;
 }
 .footer-main {

@@ -11,7 +11,7 @@
     position: fixed;
     padding: 80px 0px 50px;
     gap: 50px;
-    top: 100px;
+    top: 130px;
     width: 100%;
     left: -100%;
     background-color: #ffe4e4;
@@ -35,9 +35,14 @@
   .sec1-home-flex {
     flex-direction: column;
   }
+  .sec1-home-flex {
+    display: flex;
+    gap: 0px;
+  }
   .sec-1-left-pic {
-    width: 100%;
-    height: 300px;
+    display: none;
+    max-width: 100%;
+    /* height: 300px; */
   }
   .main-section-2-about {
     flex-direction: column;
@@ -163,9 +168,17 @@
     display: block;
     padding: 13px;
   }
+  nav img {
+    width: 100px;
+    height: 100px;
+  }
 
   .menu i {
     font-size: 12px !important;
+  }
+  .cart {
+    position: relative;
+    margin-right: 20px;
   }
 }
 
@@ -190,9 +203,10 @@
     border: none;
     cursor: pointer;
   }
-  /* .cart-info h2 {
-    display: none;
-  } */
+  .footer-col-1 img {
+    width: 150px;
+    margin-top: -50px;
+  }
 }
 
 @media (max-width: 350px) {
