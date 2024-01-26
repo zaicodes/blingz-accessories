@@ -34,11 +34,15 @@
 </section>
 <!-- Section 3 / Gategory -->
 <section class="section section3-home">
-  <div class="container">
-    <h1 class="category-heading">Browse by Category</h1>
-    <div class="heading secondary-heading">
-      Distinctive Golden Necklaces , luxurious Rings , Splendid Earrings
-    </div>
+  <div class="iframe-container">
+    <iframe
+      class="ratio ratio-16x9"
+      src="https://www.youtube.com/embed/ivzPXht4C5E?si=fiIAHCGtq8cd9VzA"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
   </div>
 </section>
 <!-- Section 4 / Information 2 -->
@@ -153,15 +157,26 @@
           alt="rating stars"
         />
       </div>
-      
-      <div class="swiper-slide">
-        <img class="testimonial-img" src="{{ url_for('static', filename='images/vanseena.webp')}}" alt="an image of person left testimonial" />
-        <p class="para">The reviews don't lie! After purchasing from this site, I understand why there's so much praise. The jewelry is stunning, and I can't wait to recommend it to friends.</p>
-        <h2 class="testimonial-name">Vanseena Harrow</h2>
-        <img class="rating" src="{{ url_for('static', filename='images/4-half-star-rating.png')}}" alt="rating stars" />
-      </div>
-      </div>
 
+      <div class="swiper-slide">
+        <img
+          class="testimonial-img"
+          src="{{ url_for('static', filename='images/vanseena.webp')}}"
+          alt="an image of person left testimonial"
+        />
+        <p class="para">
+          The reviews don't lie! After purchasing from this site, I understand
+          why there's so much praise. The jewelry is stunning, and I can't wait
+          to recommend it to friends.
+        </p>
+        <h2 class="testimonial-name">Vanseena Harrow</h2>
+        <img
+          class="rating"
+          src="{{ url_for('static', filename='images/4-half-star-rating.png')}}"
+          alt="rating stars"
+        />
+      </div>
     </div>
+  </div>
 </section>
 {% endblock %}
