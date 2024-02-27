@@ -104,7 +104,6 @@
   .swiper-slide {
     flex: 1 0 300px;
     text-align: center;
-    /* min-height: 300px; */
     background-color: #ffe4e4;
     padding: 3rem 2rem;
     border-radius: 10px;
@@ -113,10 +112,19 @@
   }
   .footer-main {
     display: grid;
-    place-items: start;
+    place-items: center;
     grid-template-columns: 1fr;
     gap: 30px;
     flex-wrap: wrap;
+  }
+  .footer-col-1 {
+    text-align: center;
+  }
+  .footer-col-3 {
+    text-align: center;
+  }
+  .footer-heading {
+    text-align: center;
   }
   .cart-section {
     position: fixed;
@@ -206,6 +214,9 @@
   .footer-col-1 img {
     width: 150px;
     margin-top: -50px;
+  }
+  .section-3-profile .main-grid {
+    gap: 40px;
   }
 }
 

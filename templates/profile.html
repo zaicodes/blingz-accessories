@@ -54,7 +54,6 @@
             required
           />
 
-
           <label for="confirm_password" class="profile-label"
             >Confirm Password:</label
           >
@@ -66,7 +65,6 @@
             name="confirm_passwordprofile"
             required
           />
-
 
           <div class="profile-btns">
             <button
@@ -95,24 +93,14 @@
         />
         <h2 class="small-heading productname">{{ cart_item.name }}</h2>
         <p class="description_para">
-          Quantity :
-          <!-- {{ cart_item.quantity }} -->
-          <input
-            type="number"
-            min="1"
-            max="10"
-            aria-label="Update quantity"
-            title="Update quantity"
-            class="profile-item-quantity"
-            value="{{ cart_item.quantity }}"
-          />
+          Quantity : {{ cart_item.quantity }}
+
           <button class="update-btn-profile main-btn">Update</button>
           <i
             class="fa-solid fa-trash removedatabasebtn"
             aria-label="Removing-button"
             title="Remove item"
           ></i>
-          <input type="hidden" class="productid" value="{{ cart_item._id }}" />
         </p>
         <p class="para productprice">Price :{{ cart_item.price }}</p>
       </div>
@@ -120,6 +108,5 @@
     </div>
   </div>
 </section>
-
 
 {% endblock %}
