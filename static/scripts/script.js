@@ -1,6 +1,6 @@
 // Get elements
 const menu = document.querySelector(".menu");
-const user = document.querySelector(".user-logo");
+const user = document.querySelectorAll(".user-logo");
 const closeLogin = document.querySelector(".close-login");
 const login = document.querySelector(".login");
 const signInBtn = document.querySelector(".signin-btn");
@@ -384,8 +384,10 @@ function confirmDeleteProfile() {
 // Toggle login
 
 if (user) {
-  user.addEventListener("click", () => {
-    toggleLoginForm();
+  user.forEach((userbtns) => {
+    userbtns.addEventListener("click", () => {
+      toggleLoginForm();
+    });
   });
 }
 
