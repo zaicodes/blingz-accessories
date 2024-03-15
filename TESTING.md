@@ -136,6 +136,14 @@ During development and deployment I noticed a few bugs that needed fixing.
 - Added the missing alt attributes and title for better accessibility, resizing logo so it's more clear.
 - Fixed error with config file which wasn't working on heroku. This was solved by changing the file name to env.py
 
+### Tutor Feedback
+
+Tutor feedback during the assessment helped identity few bugs:
+
+- The "continue to checkout" button was not functional for non-logged-in users. This issue has been resolved by enabling the button to redirect users to the sign-up/login window, prompting them to either sign up or log in before proceeding to checkout.
+
+- Additionally, there were problems with deleting and updating items in the data when the user is in their profile. This has been addressed by bringing up the cart window when the user attempts to edit or delete an item, and be able to do it from there. Changes made will reflect on the user's profile once they click checkout again.
+
 
 ### Unsolved bugs
 - in the lighthouse, the accessibility scored 88% on some point, this was due to using aria-hidden on navbar icon to flexibly control it. Implementing aria hidden can enhance the accessibility of various elements, including decorative icons or images, which in my project's case was necessary.
