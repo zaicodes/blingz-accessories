@@ -60,6 +60,68 @@ The project utilizes the following Google Fonts: with
 - Prata
   The Jost font is applied to buttons, the navbar, and price and p tags, while Prata is used exclusively for all headings and titles.
 
+### Data Model
+
+A data model was created to outline how users will interact with the application.
+
+![Data-Schema](https://github.com/zaicodes/blingz-accessories/blob/main/documentation/data-schema.png)
+
+
+The above diagram represents users and their shopping carts. Here's a brief overview of the relationships:
+
+#### User:
+
+- Each user object contains attributes such as _id, username, email, and password.
+_id uniquely identifies each user.
+- username and email represent the user's login credentials.
+- password stores the hashed password for user authentication.
+
+#### Shopping Cart:
+
+- The cart array within each user object represents their shopping cart.
+- Each item in the cart has attributes like name, price, imgSrc, and quantity.
+- name and price denote the product's name and price respectively.
+- imgSrc stores the path to the product image.
+- quantity indicates the quantity of each item added to the cart.
+
+#### Relationships:
+
+- Each user can have zero or more items in their shopping cart.
+- Users are identified uniquely by their _id.
+- The user's _id is referenced within each item in the shopping cart to associate items with specific users.
+- This schema allows users to add items to their shopping carts, with each user having their own set of items. The relationships between users and their shopping carts are established through the _id field.
+
+
+### Security:
+
+A number of different security considerations were taken into account when developing the project.
+
+#### env.py file: 
+
+Sensitive information like DATABASE_URL and SECRET_KEY are stored in a .env file, which is excluded from version control to prevent exposure.
+
+#### Defensive Programming:
+
+- The site employs defensive measures to restrict unauthorized actions.
+- For instance, users who aren't signed up or logged in can't access access the checkout process, enforced via @login_required decorators.
+
+#### Password Hashing:
+
+- User passwords aren't stored as plaintext but are hashed using the token_hex() function.
+- This function is part of the secrets module in Python, which is used for generating cryptographically strong random numbers suitable for managing data such as passwords, account authentication, and security tokens.
+
+#### Input Validation:
+
+- The system checks for existing emails to prevent duplicate registrations.
+- Length validation for password ensures sufficient complexity.
+- During registration, users confirm passwords by entering them twice, triggering an error if they don't match.
+
+#### Feedback to Users:
+
+- Flash messages provide feedback on user actions, such as successful logins or authentication failures.
+- Feedback messages avoid overly specific errors to enhance user experience, opting for more generalized messages like 'Email does not exist' or 'Incorrect password'
+
+
 ### Images
 
 I used Midjourney to create pictures of models wearing jewelry and to generate photos of jewelry products for the shop page.
@@ -135,9 +197,6 @@ Contact page:
 - Additionally, the contact page contains a map to help the user access and find the location.
 
 
-- Defensive programming:
-I've implemented defensive programming in my application to prevent checkout process by users who are not logged in or haven't created a profile. This involves verifying the presence of a user session and ensuring that the session user matches the one who created the profile and cart. If a user is not logged in, a message will be shown on the login window, prompting them to log in before proceeding to checkout.
-Additionally, the checkout button is not accessible if the user isn't logged in.
 
 ### Features left to implement
 
